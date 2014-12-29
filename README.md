@@ -4,7 +4,7 @@ TapAPI_CSharp_Wrapper
 易盛启明星API的C#封装
 
 ### 原理:
-  基于SWIG创建基于易盛启明星API的c# wrapper文件。
+  使用SWIG创建易盛启明星API的c# wrapper文件。
 
 ### 调用关系：
   CSharp_Demo <--> TapQuoteAPIWrapper.dll <--> TapQuoteAPI.dll<br />
