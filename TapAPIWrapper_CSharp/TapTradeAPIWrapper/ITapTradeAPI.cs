@@ -141,6 +141,11 @@ public class ITapTradeAPI : IDisposable {
     return ret;
   }
 
+  public virtual int QryExchangeStateInfo(out uint sessionID, TapAPIExchangeStateInfoQryReq qryReq) {
+    int ret = TapTradePINVOKE.ITapTradeAPI_QryExchangeStateInfo(swigCPtr, out sessionID, TapAPIExchangeStateInfoQryReq.getCPtr(qryReq));
+    return ret;
+  }
+
 }
 
 }

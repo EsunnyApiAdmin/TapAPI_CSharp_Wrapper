@@ -164,6 +164,15 @@
     <Compile Include="..\TapAPIWrapper_CSharp\TapTradeAPIWrapper\TapAPIExchangeInfo.cs">
       <Link>Wrapper_CS\TapTradeAPIWrapper\TapAPIExchangeInfo.cs</Link>
     </Compile>
+    <Compile Include="..\TapAPIWrapper_CSharp\TapTradeAPIWrapper\TapAPIExchangeStateInfo.cs">
+      <Link>Wrapper_CS\TapTradeAPIWrapper\TapAPIExchangeStateInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\TapAPIWrapper_CSharp\TapTradeAPIWrapper\TapAPIExchangeStateInfoNotice.cs">
+      <Link>Wrapper_CS\TapTradeAPIWrapper\TapAPIExchangeStateInfoNotice.cs</Link>
+    </Compile>
+    <Compile Include="..\TapAPIWrapper_CSharp\TapTradeAPIWrapper\TapAPIExchangeStateInfoQryReq.cs">
+      <Link>Wrapper_CS\TapTradeAPIWrapper\TapAPIExchangeStateInfoQryReq.cs</Link>
+    </Compile>
     <Compile Include="..\TapAPIWrapper_CSharp\TapTradeAPIWrapper\TapAPIFillInfo.cs">
       <Link>Wrapper_CS\TapTradeAPIWrapper\TapAPIFillInfo.cs</Link>
     </Compile>

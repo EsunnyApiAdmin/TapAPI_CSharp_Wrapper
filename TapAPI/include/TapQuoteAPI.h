@@ -3,9 +3,13 @@
 
 #include "TapQuoteAPIDataType.h"
 
-
+#ifdef _WIN32
 #define TAP_CDECL  __cdecl
 #define TAP_DLLEXPORT __declspec(dllexport)
+#else
+#define TAP_CDECL
+#define TAP_DLLEXPORT
+#endif
 
 //TapQuoteAPI.h
 //文件定义了TapQuoteAPI提供给开发者的对外接口、函数和回调接口。
@@ -43,6 +47,7 @@ public:
 	* @brief 通知用户密码修改结果
 	* @param[in] sessionID 修改密码的会话ID,和ChangePassword返回的会话ID对应。
 	* @param[in] errorCode 返回错误码，0表示成功。
+	* @note 暂未实现
 	* @ingroup G_Q_Password
 	*/
 	virtual void TAP_CDECL OnRspChangePassword(TAPIUINT32 sessionID, TAPIINT32 errorCode) = 0;
@@ -156,24 +161,20 @@ public:
 	*/
 	virtual TAPIINT32 TAP_CDECL SetAPINotify(ITapQuoteAPINotify *apiNotify) = 0;
 	/**
-	* @brief 设置易盛服务的IP地址和端口。
-	* @param[in] IP 易盛服务的IP地址；
-	* @param[in] port 服务端口号
+	* @brief 设置服务器的IP地址和端口。
+	* @param[in] IP   IP地址
+	* @param[in] port 端口号
 	* @operationtype 同步操作
 	* @ingroup G_Q_Login
 	*/
 	virtual TAPIINT32 TAP_CDECL SetHostAddress(const TAPICHAR *IP, TAPIUINT16 port) = 0;
 	/**
 	* @brief	发起登录请求。API将先连接服务，建立链路，发起登录认证。
-	* @details	在使用函数函数前用户需要完成服务器的设置SetHostAddress()，并且创建TapAPIQuotLoginAuth类型的用户信息，
+	* @details	在使用函数函数前用户需要完成服务器的设置SetHostAddress()，并且创建TapAPIQuoteLoginAuth类型的用户信息，
 	*			并且需要设置好回调接口。\n
-	*			Login()函数接受TapAPIQuotLoginAuth描述的验证信息，使用此信息向服务器发起登录请求。API将先连接服务器，
-	*			建立链路，发起登录认证，首先可能登录的是接入服务，这个时候返回的是服务地址，再根据地址登录前置
-	*			服务器，登录前置服务器可能需要强制修改密码，这个时候需要重新登录。\n
-	*			登录过程中建立连接的返回信息通过回调OnDisconnect()返回给用户。连接建立后的用户验证回馈信息通过
-	*			回调OnLogin()返回给用户。\n
-	*			登录成功后API会自动进行API的初始化，查询完以后会通过回调OnAPIReady()指示用户API初始化完成，
-	*			可以进行后续的操作了。
+	*			连接建立后的用户验证回馈信息通过回调OnLogin()返回给用户。\n
+	*			登录成功后API会自动进行API的初始化，API向服务器请求基础数据，查询完以后会通过回调OnAPIReady()
+	*			指示用户API初始化完成，可以进行后续的操作了。
 	* @param[in] loginAuth 登录验证信息结构指针。包含登录需要的验证信息。
 	* @retval 0 登录成功，API开始准备后台数据
 	* @retval 非0 错误码
@@ -198,6 +199,7 @@ public:
 	* @retval 0 成功
 	* @retval 非0 错误码
 	* @operationtype 异步操作
+	* @note 暂未实现
 	* @ingroup G_Q_Password
 	*/
 	virtual TAPIINT32 TAP_CDECL ChangePassword(TAPIUINT32 *sessionID, const TapAPIChangePasswordReq *req) = 0;
@@ -228,7 +230,6 @@ public:
 	* @retval 0 请求成功
 	* @retval 非0 错误码
 	* @operationtype 异步操作
-	* @see	GetAllCommodities()
 	* @ingroup G_Q_TradingTimeBucket
 	*/
 	virtual TAPIINT32 TAP_CDECL QryTradingTimeBucketOfCommodity(TAPIUINT32 *sessionID, const TapAPICommodity *qryReq) = 0;
@@ -237,7 +238,12 @@ public:
 	* @details	使用此函数前需要先QryCommodity()取得品种信息，
 	*			然后选择需要的品种将信息填入TapAPICommodity结构体中完成查询请求。
 	* @param[out] sessionID 返回请求的会话ID;
-	* @param[in] qryReq 查询系统中指定品种的合约信息请求的结构体指针;
+	* @param[in] qryReq 查询系统中指定品种的合约信息请求的结构体指针;\n
+	*				    该参数各字段为可选字段，可以用以下方法查询：\n
+	*					1.全部留空：查所有合约\n
+	*					2.仅交易所编码有效：查该交易所下所有品种的合约\n
+	*					3.交易所编码和品种类型有效：查该交易所下指定品种类型的合约\n
+	*					4.交易所编码、品种类型和品种编码都有效：查该品种下的所有合约
 	* @retval 0 请求成功
 	* @retval 非0 错误码
 	* @operationtype 异步操作
@@ -275,10 +281,12 @@ public:
 	* @param[out]	sessionID		返回请求的会话ID。
 	* @param[in]	qryReq			请求历史行情的结构体指针；\n
 	*								HisQuoteEndTime和HisQuoteCandleQryCount共同决定查询的K线根数：\n
-	*								当HisQuoteEndTime和HisQuoteCandleQryCount都为空，不允许,return 错误码。\n
-	*								当HisQuoteEndTime为空,HisQuoteCandleQryCount不为空时，查最近的HisQuoteCandleQryCount条K线。\n
-	*								当HisQuoteEndTime不为空,HisQuoteCandleQryCount为空时，查从HisQuoteEndTime至今的K线。\n
-	*								当HisQuoteEndTime和HisQuoteCandleQryCount都不为空时，查HisQuoteEndTime之前(以HisQuoteEndTime为终点)的HisQuoteCandleQryCount条K线。
+	*				输入参数|返回数据
+	*				--|--							
+	*				HisQuoteEndTime:空   \n HisQuoteCandleQryCount:0   | 不允许,return 错误码。
+	*				HisQuoteEndTime:空   \n HisQuoteCandleQryCount:非0 | 最近的HisQuoteCandleQryCount条K线。
+	*				HisQuoteEndTime:非空 \n HisQuoteCandleQryCount:0   | 从HisQuoteEndTime至今的K线。
+	*				HisQuoteEndTime:非空 \n HisQuoteCandleQryCount:非0 | HisQuoteEndTime之前(以HisQuoteEndTime为终点)的\nHisQuoteCandleQryCount条K线。
 	* @retval 0 请求成功
 	* @retval 非0 错误码
 	* @operationtype 异步操作
@@ -315,12 +323,7 @@ extern "C" {
 
 /**
 * @brief	创建TapQuoteAPI的接口对象。
-* @details	CreateTapQuoteAPI()初始化整个API接口，并且创建两个子线程：通讯线程(Thread 1)和操作线程(Thread 2): \n
-*			通讯线程(Thread 1)使用TCP完成与服务器之间的通讯，初始化时将等待用户传入登陆的相关信息然后进行登陆操作，登陆
-*			完成后线程将从端口循环获取数据，并根据数据的不同进行不同的处理，处理结果的重要数据将保存在API中。\n
-*			操作线程(Thread 2)用于处理获取行情相关内容时需要进行的查询大量数据的操作，线程循环从用户命令队列获取用户调
-*			用接口时插入到队列中的操作数据，然后通过操作数据从API保存的数据中取得相关的内容。
-*			如果有回调函数，取得的内容将传递给回调函数。
+* @details	创建整个行情API的接口
 * @param[in] appInfo 应用程序相关信息。
 * @param[in] iResult 创建接口的错误码。
 * @retval NULL	创建失败。
@@ -330,7 +333,6 @@ extern "C" {
 TAP_DLLEXPORT ITapQuoteAPI *TAP_CDECL CreateTapQuoteAPI(const TapAPIApplicationInfo *appInfo, TAPIINT32 &iResult);
 /**
 * @brief	销毁通过CreateTapQuoteAPI函数创建的ITapQuoteAPI对象。
-* @details	销毁操作首先打开断开链接的标记，通讯线程(Thread 1)和操作线程(Thread 2)检测到此标记后会退出循环状态然后结束线程.
 * @param[in] apiObj ITapQuoteAPI对象指针。
 * @ingroup G_Q_API
 */
@@ -342,7 +344,7 @@ TAP_DLLEXPORT void TAP_CDECL FreeTapQuoteAPI(ITapQuoteAPI *apiObj);
 TAP_DLLEXPORT const TAPICHAR *TAP_CDECL GetTapQuoteAPIVersion();
 /**
 * @brief	设置API自身保存数据目录
-* @details	调用函数的同时会在path描述的目录下打开以年月日（格式TapTAPI[YYYYMMDD].log)命名的文件，\n
+* @details	调用函数的同时会在path描述的目录下打开以年月日（格式TapQuoteAPI[YYYYMMDD].log)命名的文件，\n
 *			没有此文件的情况下会试图创建此文件。\n
 *			文件中保存的数据为API接收到的重要数据和API的使用和错误日志。
 * @param[in] path 目录。必须可用，目录符号Window下为”\\”或者”/”, Linux下为”/”。
@@ -354,7 +356,7 @@ TAP_DLLEXPORT const TAPICHAR *TAP_CDECL GetTapQuoteAPIVersion();
 TAP_DLLEXPORT TAPIINT32 TAP_CDECL SetTapQuoteAPIDataPath(const TAPICHAR *path);
 /**
 * @brief	设置API的日志级别
-* @details	设定日志的输出级别，只有当实际日志级别与此处设定的级别相同或更高时，才会将日志写入SetAPIDataPath()函数打开的日志文件。\n
+* @details	设定日志的输出级别，只有当实际日志级别与此处设定的级别相同或更高时，才会将日志写入SetTapQuoteAPIDataPath()函数打开的日志文件。\n
 * @param[in]	level 日志级别：\n
 *					APILOGLEVEL_NONE	：不记录日志\n
 *					APILOGLEVEL_ERROR	：记录Error日志\n

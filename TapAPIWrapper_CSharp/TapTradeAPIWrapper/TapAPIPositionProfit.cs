@@ -101,6 +101,16 @@ public class TapAPIPositionProfit : IDisposable {
     } 
   }
 
+  public double FloatingPL {
+    set {
+      TapTradePINVOKE.TapAPIPositionProfit_FloatingPL_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIPositionProfit_FloatingPL_get(swigCPtr);
+      return ret;
+    } 
+  }
+
   public TapAPIPositionProfit() : this(TapTradePINVOKE.new_TapAPIPositionProfit__SWIG_0(), true) {
   }
 

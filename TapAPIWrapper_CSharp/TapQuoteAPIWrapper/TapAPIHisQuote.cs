@@ -142,16 +142,6 @@ public class TapAPIHisQuote : IDisposable {
     } 
   }
 
-  public double QTotalTurnover {
-    set {
-      TapQuotePINVOKE.TapAPIHisQuote_QTotalTurnover_set(swigCPtr, value);
-    } 
-    get {
-      double ret = TapQuotePINVOKE.TapAPIHisQuote_QTotalTurnover_get(swigCPtr);
-      return ret;
-    } 
-  }
-
   public ulong QPositionQty {
     set {
       TapQuotePINVOKE.TapAPIHisQuote_QPositionQty_set(swigCPtr, value);

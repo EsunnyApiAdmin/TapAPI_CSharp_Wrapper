@@ -371,6 +371,36 @@ public class TapAPINewOrder : IDisposable {
     } 
   }
 
+  public uint OrderQty2 {
+    set {
+      TapTradePINVOKE.TapAPINewOrder_OrderQty2_set(swigCPtr, value);
+    } 
+    get {
+      uint ret = TapTradePINVOKE.TapAPINewOrder_OrderQty2_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public char HedgeFlag2 {
+    set {
+      TapTradePINVOKE.TapAPINewOrder_HedgeFlag2_set(swigCPtr, value);
+    } 
+    get {
+      char ret = TapTradePINVOKE.TapAPINewOrder_HedgeFlag2_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public byte MarketLevel {
+    set {
+      TapTradePINVOKE.TapAPINewOrder_MarketLevel_set(swigCPtr, value);
+    } 
+    get {
+      byte ret = TapTradePINVOKE.TapAPINewOrder_MarketLevel_get(swigCPtr);
+      return ret;
+    } 
+  }
+
   public TapAPINewOrder() : this(TapTradePINVOKE.new_TapAPINewOrder__SWIG_0(), true) {
   }
 

@@ -441,6 +441,16 @@ public class TapAPICloseInfo : IDisposable {
     } 
   }
 
+  public double ClosePL {
+    set {
+      TapTradePINVOKE.TapAPICloseInfo_ClosePL_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPICloseInfo_ClosePL_get(swigCPtr);
+      return ret;
+    } 
+  }
+
   public TapAPICloseInfo() : this(TapTradePINVOKE.new_TapAPICloseInfo__SWIG_0(), true) {
   }
 

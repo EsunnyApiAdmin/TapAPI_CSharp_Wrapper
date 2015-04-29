@@ -4,8 +4,7 @@
 #include "TapTradeAPIDataType.h"
 //#include "TapProtocol.h"
 
-#define  TAP
-#ifdef TAP
+#ifdef _WIN32
 #define TAP_CDECL __cdecl
 #define TAP_DLLEXPORT __declspec(dllexport)
 #else
@@ -63,6 +62,7 @@ public:
 	* @param[in] errorCode 返回错误码，0表示成功。
 	* @param[in] info 指向返回的信息结构体。当errorCode不为0时，info为空。
 	* @attention 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+	* @note 该接口暂未实现
 	* @ingroup G_T_UserInfo
 	*/
 	virtual void TAP_CDECL OnRspSetReservedInfo(TAPIUINT32 sessionID, TAPIINT32 errorCode, const TAPISTR_50 info) = 0;
@@ -146,11 +146,12 @@ public:
 	virtual void TAP_CDECL OnRtnOrder(const TapAPIOrderInfoNotice *info) = 0;
 	/**
 	* @brief	返回对报单的主动操作结果
-	* @details	如下单，撤单，改单，挂起，激活等操作的结果。
+	* @details	如下单，撤单等操作的结果。
 	* @param[in] sessionID 请求的会话ID；
 	* @param[in] errorCode 错误码。0 表示成功。
 	* @param[in] info 报单的具体信息。当errorCode不为0时，info为空。
 	* @attention 不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+	* @note 该接口目前没有用到，所有操作结果通过OnRtnOrder返回
 	* @ingroup G_T_TradeActions
 	*/
 	virtual void TAP_CDECL OnRspOrderAction(TAPIUINT32 sessionID, TAPIUINT32 errorCode, const TapAPIOrderActionRsp *info) = 0;
@@ -244,6 +245,24 @@ public:
 	* @ingroup G_T_DeepQuote
 	*/
 	virtual void TAP_CDECL OnRspQryDeepQuote(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, const TapAPIDeepQuoteQryRsp *info) = 0;
+	/**
+	* @brief 交易所时间状态信息查询应答
+	* @param[in] sessionID 请求的会话ID；
+	* @param[in] errorCode 错误码。0 表示成功。
+	* @param[in] isLast 	标示是否是最后一批数据
+	* @param[in] info		指向返回的信息结构体。当errorCode不为0时，info为空。
+	* @attention  不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+	* @ingroup G_T_TradeSystem
+	*/
+	virtual void TAP_CDECL OnRspQryExchangeStateInfo(TAPIUINT32 sessionID,TAPIINT32 errorCode, TAPIYNFLAG isLast,const TapAPIExchangeStateInfo * info)=0;
+	/**
+	* @brief 交易所时间状态信息通知	
+	* @param[in] info		指向返回的信息结构体。当errorCode不为0时，info为空。
+	* @attention  不要修改和删除info所指示的数据；函数调用结束，参数不再有效。
+	* @ingroup G_T_TradeSystem
+	*/
+	virtual void TAP_CDECL OnRtnExchangeStateInfo(const TapAPIExchangeStateInfoNotice * info)=0;
+
 };
 
 //TapTradeAPI 对外功能接口。包含了用户可以调用的功能函数。
@@ -262,23 +281,20 @@ public:
 	*/
 	virtual TAPIINT32 TAP_CDECL SetAPINotify(ITapTradeAPINotify *apiNotify) = 0;
 	/**
-	* @brief 设置易盛服务的IP地址和端口。
-	* @param[in] IP 易盛服务的IP地址；
-	* @param[in] port 服务端口号
+	* @brief 设置服务器的IP地址和端口。
+	* @param[in] IP   IP地址
+	* @param[in] port 端口号
 	* @operationtype 同步操作
 	* @ingroup G_T_Login
 	*/
 	virtual TAPIINT32 TAP_CDECL SetHostAddress(const TAPICHAR *IP, TAPIUINT16 port) = 0;
 	/**
 	* @brief	发起登录请求。API将先连接服务，建立链路，发起登录认证。
-	* @details	在使用函数前用户需要完成服务器的设置SetHostAddress()，并且创建TapAPITradeLoginAuth()类型的用户信息，
+	* @details	在使用函数前用户需要完成服务器的设置SetHostAddress()，并且创建TapAPITradeLoginAuth类型的用户信息，
 	*			并且需要设置好回调接口。\n
-	*			Login()函数接受TapAPITradeLoginAuth描述的验证信息，使用此信息向服务器发起登录请求。API将先连接服务器，
-	*			建立链路，发起登录认证，首先可能登录的是接入服务，这个时候返回的是服务地址，再根据地址登录前置
-	*			服务器，登录前置服务器可能需要强制修改密码，这个时候需要重新登录。\n
-	*			登录过程中建立连接的返回信息通过回调OnDisconnect()返回给用户。连接建立后的用户验证回馈信息通过
-	*			回调OnLogin()返回给用户。\n
-	*			登录成功后API会自动进行API的初始化，API按照流程向服务器请求数据，依次查询完以后会通过回调OnAPIReady()
+	*			登录过程中建立连接的返回信息通过回调OnConnect返回给用户。\n
+	*			连接建立后的用户验证回馈信息通过回调OnLogin()返回给用户。\n
+	*			登录成功后API会自动进行API的初始化，API向服务器请求基础数据，查询完以后会通过回调OnAPIReady()
 	*			指示用户API初始化完成，可以进行后续的操作了。
 	* @param[in] loginAuth 登录验证信息结构指针。包含登录需要的验证信息。
 	* @retval 0 登录成功，API开始准备后台数据
@@ -325,6 +341,7 @@ public:
 	* @retval 0 请求成功
 	* @retval 非0 错误码
 	* @operationtype 异步操作
+	* @note 该接口暂未实现
 	* @ingroup G_T_UserInfo
 	*/
 	virtual TAPIINT32 TAP_CDECL SetReservedInfo(TAPIUINT32 *sessionID, const TAPISTR_50 info) = 0;
@@ -344,8 +361,7 @@ public:
 	/**
 	* @brief	查询客户资金
 	* @details	TapAPIFundReq需要QryAccount()获取的资金账号。
-	*			函数的回调将返回资金账号的资金信息和父资金账号的信息。\n
-	*			当没有父资金账号时，也可以只填写资金账号字段，函数的回调将只返回资金账号的资金信息。
+	*			函数的回调将返回资金账号的资金信息。\n
 	* @param[out] sessionID 返回请求的会话ID;
 	* @param[in] qryReq	查询客户资金请求的结构体指针
 	* @retval 0 请求成功
@@ -378,7 +394,12 @@ public:
 	* @details	使用此函数前需要先QrycommodityInfo()取得品种信息，
 	*			然后选择需要的品种将信息填入TapAPICommodity结构体中完成查询请求。
 	* @param[out] sessionID 返回请求的会话ID;
-	* @param[in] qryReq 查询系统中指定品种的合约信息请求的结构体指针;
+	* @param[in] qryReq 查询系统中指定品种的合约信息请求的结构体指针;\n
+	*				    该参数各字段为可选字段，可以用以下方法查询：\n
+	*					1.全部留空：查所有合约\n
+	*					2.仅交易所编码有效：查该交易所下所有品种的合约\n
+	*					3.交易所编码和品种类型有效：查该交易所下指定品种类型的合约\n
+	*					4.交易所编码、品种类型和品种编码都有效：查该品种下的所有合约
 	* @retval 0 请求成功
 	* @retval 非0 错误码
 	* @operationtype 异步操作
@@ -413,8 +434,6 @@ public:
 	* @brief	查询报单
 	* @details	用户下单后，信息会上传到服务器中保存等待触发，所以用户可以在下单后可以查询到委托信息。
 	*			委托信息为委托最后的状态。\n
-	*			查询委托使用的信息需要从下单时返回的委托结构中获取。\n
-	*			如果委托结构为空, 则返回所有用户未成交的委托。
 	* @retval 0 请求成功
 	* @retval 非0 错误码
 	* @operationtype 异步操作
@@ -437,8 +456,9 @@ public:
 	* @details	查询系统中成交的信息。
 	* @param[out] sessionID 返回请求的会话ID;
 	* @param[in] qryReq 成交查询信息结构体指针。
-	@retval 成功返回0，不然返回错误码。
-	操作类型：异步操作
+	* @retval 0 请求成功
+	* @retval 非0 错误码
+	* @operationtype 异步操作
 	* @ingroup G_T_TradeInfo
 	*/
 	virtual TAPIINT32 TAP_CDECL QryFill(TAPIUINT32 *sessionID, const TapAPIFillQryReq *qryReq) = 0;
@@ -447,8 +467,9 @@ public:
 	* @details	查询用户的所有持仓信息。
 	* @param[out] sessionID 返回请求的会话ID;
 	* @param[in] qryReq	查询用户持仓请求的结构体指针
-	* @retval 成功返回0，不然返回错误码。
-	操作类型：异步操作
+	* @retval 0 请求成功
+	* @retval 非0 错误码
+	* @operationtype 异步操作
 	* @ingroup G_T_TradeInfo
 	*/
 	virtual TAPIINT32 TAP_CDECL QryPosition(TAPIUINT32 *sessionID, const TapAPIPositionQryReq *qryReq) = 0;
@@ -473,6 +494,16 @@ public:
 	* @ingroup G_T_DeepQuote
 	*/
 	virtual TAPIINT32 TAP_CDECL QryDeepQuote(TAPIUINT32 *sessionID, const TapAPIContract *qryReq) = 0;
+	/**
+	* @brief	查询交易所时间状态信息
+	* @param[out]	sessionID 返回请求的会话ID;
+	* @param[in]	qryReq 查询交易所时间状态信息请求结构体指针
+	* @retval 0 请求成功
+	* @retval 非0 错误码
+	* @operationtype 异步操作
+	* @ingroup G_T_TradeSystem
+	*/
+	virtual TAPIINT32 TAP_CDECL QryExchangeStateInfo(TAPIUINT32 * sessionID,const TapAPIExchangeStateInfoQryReq * qryReq)=0;
 };
 
 //-----------------------------TapTradeAPI导出函数------------------------------------
@@ -484,12 +515,7 @@ extern "C" {
 
 /**
 * @brief	创建TapTradeAPI的接口对象。
-* @details	CreateTapTradeAPI()初始化整个API接口，并且创建两个子线程：通讯线程(Thread 1)和操作线程(Thread 2): \n
-*			通讯线程(Thread 1)使用TCP完成与服务器之间的通讯，初始化时将等待用户传入登陆的相关信息然后进行登陆操作，登陆
-*			完成后线程将从端口循环获取数据，并根据数据的不同进行不同的处理，处理结果的重要数据将保存在API中。\n
-*			操作线程(Thread 2)用于处理获取行情相关内容时需要进行的查询大量数据的操作，线程循环从用户命令队列获取用户调
-*			用接口时插入到队列中的操作数据，然后通过操作数据从API保存的数据中取得相关的内容。
-*			如果有回调函数，取得的内容将传递给回调函数。
+* @details	创建整个交易API的接口
 * @param[in] appInfo 应用程序相关信息。
 * @param[in] iResult 创建接口的错误码。
 * @retval NULL	创建失败，具体原因可通过输出参数iResult判断。
@@ -499,7 +525,6 @@ extern "C" {
 TAP_DLLEXPORT ITapTradeAPI *TAP_CDECL CreateTapTradeAPI(const TapAPIApplicationInfo *appInfo, TAPIINT32 &iResult);
 /**
 * @brief	销毁通过CreateTapTradeAPI函数创建的ITapTradeAPI对象。
-* @details	销毁操作首先打开断开链接的标记，通讯线程(Thread 1)和操作线程(Thread 2)检测到此标记后会退出循环状态然后结束线程.
 * @param[in] apiObj ITapTradeAPI对象指针。
 * @ingroup G_T_API
 */
@@ -511,7 +536,7 @@ TAP_DLLEXPORT void TAP_CDECL FreeTapTradeAPI(ITapTradeAPI *apiObj);
 TAP_DLLEXPORT const TAPICHAR *TAP_CDECL GetTapTradeAPIVersion();
 /**
 * @brief	设置API自身保存数据目录
-* @details	调用函数的同时会在path描述的目录下打开以年月日（格式TapTAPI[YYYYMMDD].log)命名的文件，\n
+* @details	调用函数的同时会在path描述的目录下打开以年月日（格式TapTradeAPI[YYYYMMDD].log)命名的文件，\n
 *			没有此文件的情况下会试图创建此文件。\n
 *			文件中保存的数据为API接收到的重要数据和API的使用和错误日志。
 * @param[in] path 目录。必须可用，目录符号Window下为”\\”或者”/”, Linux下为”/”。
@@ -523,7 +548,7 @@ TAP_DLLEXPORT const TAPICHAR *TAP_CDECL GetTapTradeAPIVersion();
 TAP_DLLEXPORT TAPIINT32 TAP_CDECL SetTapTradeAPIDataPath(const TAPICHAR *path);
 /**
 * @brief	设置API的日志级别
-* @details	设定日志的输出级别，只有当实际日志级别与此处设定的级别相同或更高时，才会将日志写入SetAPIDataPath()函数打开的日志文件。\n
+* @details	设定日志的输出级别，只有当实际日志级别与此处设定的级别相同或更高时，才会将日志写入SetTapTradeAPIDataPath()函数打开的日志文件。\n
 * @param[in]	level 日志级别：\n
 *					APILOGLEVEL_NONE	：不记录日志\n
 *					APILOGLEVEL_ERROR	：记录Error日志\n

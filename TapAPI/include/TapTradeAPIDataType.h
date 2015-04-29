@@ -26,14 +26,18 @@ const TAPIAccountType		TAPI_ACCOUNT_TYPE_ORGANIZATION		    = 'O';
 *	@{
 */
 //=============================================================================
-//! 登录用户身份类型
+//! 权限编码类型
 typedef TAPIINT32			TAPIRightIDType;
 //! 系统删单
 const TAPIRightIDType		TAPI_RIGHT_ORDER_DEL	= 30001;
 //! 订单审核
 const TAPIRightIDType		TAPI_RIGHT_ORDER_CHECK	= 30002;
-//! 订单查询
+//! 只可查询
 const TAPIRightIDType		TAPI_RIGHT_ONLY_QRY		= 31000;
+//! 只可开仓
+const TAPIRightIDType		TAPI_RIGHT_ONLY_OPEN	= 31001;
+//! 上期查挂单
+const TAPIRightIDType		TAPI_RIGHT_SHFE_QUOTE	= 31002;
 /** @}*/
 
 //=============================================================================
@@ -136,6 +140,14 @@ const TAPIOrderSourceType		TAPI_ORDER_SOURCE_MANUAL				= '4';
 const TAPIOrderSourceType		TAPI_ORDER_SOURCE_CARRY					= '5';
 //! 程式化报单
 const TAPIOrderSourceType		TAPI_ORDER_SOURCE_PROGRAM				= '6';
+//! 交割行权
+const TAPIOrderSourceType		TAPI_ORDER_SOURCE_DELIVERY				= '7';
+//! 期权放弃
+const TAPIOrderSourceType		TAPI_ORDER_SOURCE_ABANDON				= '8';
+//! 通道费
+const TAPIOrderSourceType		TAPI_ORDER_SOURCE_CHANNEL				= '9';
+//! 易盛API
+const TAPIOrderSourceType		TAPI_ORDER_SOURCE_ESUNNY_API			= 'A';
 /** @}*/
 
 //=============================================================================
@@ -206,6 +218,8 @@ const TAPIHedgeFlagType			TAPI_HEDGEFLAG_NONE					= 'N';
 const TAPIHedgeFlagType			TAPI_HEDGEFLAG_T					= 'T';
 //! 保值
 const TAPIHedgeFlagType			TAPI_HEDGEFLAG_B					= 'B';
+//! 套利
+const TAPIHedgeFlagType			TAPI_HEDGEFLAG_L					= 'L';
 /** @}*/
 
 //=============================================================================
@@ -300,6 +314,8 @@ const TAPIMatchSourceType		TAPI_MATCH_SOURCE_DELIVERY				= '7';
 const TAPIMatchSourceType		TAPI_MATCH_SOURCE_ABANDON				= '8';
 //! 通道费
 const TAPIMatchSourceType		TAPI_MATCH_SOURCE_CHANNEL				= '9';
+//! 易盛API
+const TAPIMatchSourceType		TAPI_MATCH_SOURCE_ESUNNY_API			= 'A';
 /** @}*/
 
 //=============================================================================
@@ -509,6 +525,55 @@ const TAPITriggerPriceTypeType	TAPI_TRIGGER_PRICE_SELL				= 'S';
 const TAPITriggerPriceTypeType	TAPI_TRIGGER_PRICE_LAST				= 'L';
 /** @}*/
 
+//=============================================================================
+/**
+ *	\addtogroup G_DATATYPE_T_TAPIMARKETLEVELTYPE	市价撮合深度
+ *	@{
+ */
+//=============================================================================
+//! 市价撮合深度
+typedef TAPIUINT8				TAPIMarketLevelType;
+//! 任意价
+const TAPIMarketLevelType	TAPI_MARKET_LEVEL_0						= 0;
+//! 1档最优价
+const TAPIMarketLevelType	TAPI_MARKET_LEVEL_1						= 1;
+//! 5档
+const TAPIMarketLevelType	TAPI_MARKET_LEVEL_5						= 5;
+//! 10档
+const TAPIMarketLevelType	TAPI_MARKET_LEVEL_10					= 10;
+/** @}*/
+
+
+//=============================================================================
+/**
+ *	\addtogroup G_DATATYPE_T_TAPITRADINGSTATETYPE	交易状态
+ *	@{
+ */
+//=============================================================================
+//! 交易状态
+typedef TAPICHAR               TAPITradingStateType;
+//! 集合竞价
+const TAPITradingStateType      TAPI_TRADE_STATE_BID                = '1';
+//! 集合竞价撮合
+const TAPITradingStateType      TAPI_TRADE_STATE_MATCH              = '2';
+//! 连续交易
+const TAPITradingStateType      TAPI_TRADE_STATE_CONTINUOUS         = '3';
+//! 交易暂停
+const TAPITradingStateType      TAPI_TRADE_STATE_PAUSED             = '4';
+//! 闭市
+const TAPITradingStateType      TAPI_TRADE_STATE_CLOSE              = '5';
+//! 闭市处理时间
+const TAPITradingStateType      TAPI_TRADE_STATE_DEALLAST           = '6';
+//! 网关未连
+const TAPITradingStateType		TAPI_TRADE_STATE_GWDISCONNECT		= '0';
+//! 未知状态
+const TAPITradingStateType		TAPI_TRADE_STATE_UNKNOWN			= 'N';
+//! 正初始化
+const TAPITradingStateType		TAPI_TRADE_STATE_INITIALIZE			= 'I';
+//! 准备就绪
+const TAPITradingStateType		TAPI_TRADE_STATE_READY				= 'R';
+/** @}*/
+
 
 //! ------------------------------------------------------------------------------------------
 
@@ -595,6 +660,9 @@ struct TapAPINewOrder
 	TAPITriggerConditionType	TriggerCondition;				///< 触发条件
 	TAPITriggerPriceTypeType	TriggerPriceType;				///< 触发价格类型	
 	TAPIYNFLAG					AddOneIsValid;					///< 是否T+1有效
+	TAPIUINT32					OrderQty2;						///< 委托数量2
+	TAPIHedgeFlagType			HedgeFlag2;						///< 投机保值2
+	TAPIMarketLevelType			MarketLevel;					///< 市价撮合深度   
 };
 
 //! 委托类型查询应答
@@ -717,6 +785,9 @@ struct TapAPIOrderInfo
 	TAPITriggerConditionType	TriggerCondition;				///< 触发条件
 	TAPITriggerPriceTypeType	TriggerPriceType;				///< 触发价格类型
 	TAPIYNFLAG					AddOneIsValid;					///< 是否T+1有效
+	TAPIUINT32					OrderQty2;						///< 委托数量2
+	TAPIHedgeFlagType			HedgeFlag2;						///< 投机保值2
+	TAPIMarketLevelType			MarketLevel;					///< 市价撮合深度   
 };
 
 //! 报单通知结构
@@ -844,6 +915,7 @@ struct TapAPIFillInfo
 	TAPIREAL64					UnExpProfit;					///< 未到期平盈
 	TAPIREAL64					UpperMatchPrice;				///< 上手成交价
 	TAPIREAL64					QuotePrice;						///< 当前行情价
+	TAPIREAL64					ClosePL;                        ///< 逐笔平盈
 };
 
 //! 平仓查询请求结构
@@ -918,6 +990,7 @@ struct TapAPIPositionInfo
 	TAPIREAL64					OptionMarketValue;				///< 期权市值
 	TAPISTR_20					MatchCmbNo;						///< 组合持仓号
 	TAPIYNFLAG					IsHistory;						///< 是否历史持仓
+	TAPIREAL64					FloatingPL;						///< 逐笔浮盈
 };
 
 //! 客户持仓盈亏
@@ -929,6 +1002,7 @@ struct TapAPIPositionProfit
 	TAPIREAL64					LMEPositionProfit;				///< LME持仓盈亏
 	TAPIREAL64					OptionMarketValue;				///< 期权市值
 	TAPIREAL64					CalculatePrice;					///< 计算价格
+	TAPIREAL64					FloatingPL;						///< 逐笔浮盈
 };
 
 //! 客户持仓盈亏通知
@@ -981,6 +1055,7 @@ struct TapAPICloseInfo
 	TAPIREAL64					PremiumPay;						///< 权利金支付
 	TAPIREAL64					CloseProfit;					///< 平仓盈亏
 	TAPIREAL64					UnExpProfit;					///< 未到期平盈
+	TAPIREAL64					ClosePL;                        ///< 逐笔平盈
 };
 //! 资金查询请求
 struct TapAPIFundReq
@@ -1032,6 +1107,23 @@ struct TapAPIFundData
 	TAPIREAL64					CanDraw;						///< 可提取
 	TAPIREAL64					MarketEquity;					///< 账户市值
 	TAPIREAL64					OriginalCashInOut;				///< 币种原始出入金
+	TAPIREAL64					FloatingPL;						///< 逐笔浮盈
+	TAPIREAL64					FrozenRiskFundValue;			///< 风险冻结资金
+	TAPIREAL64					ClosePL;						///< 逐笔平盈
+	TAPIREAL64					NoCurrencyPledgeValue;          ///< 非货币质押
+	TAPIREAL64					PrePledgeValue;                 ///< 期初质押
+	TAPIREAL64					PledgeIn;                       ///< 质入
+	TAPIREAL64					PledgeOut;                      ///< 质出
+	TAPIREAL64					PledgeValue;                    ///< 质押余额
+	TAPIREAL64					BorrowValue;                    ///< 借用金额
+	TAPIREAL64					SpecialAccountFrozenMargin;     ///< 特殊产品冻结保证金
+	TAPIREAL64					SpecialAccountMargin;           ///< 特殊产品保证金   
+	TAPIREAL64					SpecialAccountFrozenFee;        ///< 特殊产品冻结手续费
+	TAPIREAL64					SpecialAccountFee;              ///< 特殊产品手续费
+	TAPIREAL64					SpecialFloatProfit;             ///< 特殊产品浮盈
+	TAPIREAL64					SpecialCloseProfit;             ///< 特殊产品平盈
+	TAPIREAL64					SpecialFloatPL;                 ///< 特殊产品逐笔浮盈
+	TAPIREAL64					SpecialClosePL;                 ///< 特殊产品逐笔平盈
 };
 
 //! 交易品种信息
@@ -1101,6 +1193,29 @@ struct TapAPIDeepQuoteQryRsp
 {
 	TapAPIContract			Contract;							///< 合约
 	TapAPIDeepQuoteInfo		DeepQuote;							///< 深度行情
+};
+
+//! 交易所时间状态信息查询请求结构
+struct TapAPIExchangeStateInfoQryReq
+{
+};
+
+//! 交易所时间状态信息
+struct TapAPIExchangeStateInfo
+{
+	TAPISTR_10				UpperChannelNo;			///< 上手通道编号
+	TAPISTR_10				ExchangeNo;				///< 交易所编号
+	TAPICommodityType		CommodityType;			///< 品种类型
+	TAPISTR_10				CommodityNo;			///< 品种编号
+	TAPIDATETIME			ExchangeTime;			///< 交易所时间
+	TAPITradingStateType	TradingState;			///< 交易所状态
+};
+
+//! 交易所时间状态信息通知结构
+struct TapAPIExchangeStateInfoNotice
+{
+	TAPIYNFLAG				IsLast;					///< 是否最后一包数据
+	TapAPIExchangeStateInfo ExchangeStateInfo;		///< 交易所时间状态信息
 };
 
 #pragma pack(pop)

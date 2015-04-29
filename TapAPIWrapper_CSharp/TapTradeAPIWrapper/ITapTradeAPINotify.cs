@@ -141,6 +141,14 @@ public class ITapTradeAPINotify : IDisposable {
     TapTradePINVOKE.ITapTradeAPINotify_OnRspQryDeepQuote(swigCPtr, sessionID, errorCode, isLast, TapAPIDeepQuoteQryRsp.getCPtr(info));
   }
 
+  public virtual void OnRspQryExchangeStateInfo(uint sessionID, int errorCode, char isLast, TapAPIExchangeStateInfo info) {
+    TapTradePINVOKE.ITapTradeAPINotify_OnRspQryExchangeStateInfo(swigCPtr, sessionID, errorCode, isLast, TapAPIExchangeStateInfo.getCPtr(info));
+  }
+
+  public virtual void OnRtnExchangeStateInfo(TapAPIExchangeStateInfoNotice info) {
+    TapTradePINVOKE.ITapTradeAPINotify_OnRtnExchangeStateInfo(swigCPtr, TapAPIExchangeStateInfoNotice.getCPtr(info));
+  }
+
   public ITapTradeAPINotify() : this(TapTradePINVOKE.new_ITapTradeAPINotify__SWIG_0(), true) {
     SwigDirectorConnect();
   }
@@ -201,7 +209,11 @@ public class ITapTradeAPINotify : IDisposable {
       swigDelegate23 = new SwigDelegateITapTradeAPINotify_23(SwigDirectorOnRtnPositionProfit);
     if (SwigDerivedClassHasMethod("OnRspQryDeepQuote", swigMethodTypes24))
       swigDelegate24 = new SwigDelegateITapTradeAPINotify_24(SwigDirectorOnRspQryDeepQuote);
-    TapTradePINVOKE.ITapTradeAPINotify_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20, swigDelegate21, swigDelegate22, swigDelegate23, swigDelegate24);
+    if (SwigDerivedClassHasMethod("OnRspQryExchangeStateInfo", swigMethodTypes25))
+      swigDelegate25 = new SwigDelegateITapTradeAPINotify_25(SwigDirectorOnRspQryExchangeStateInfo);
+    if (SwigDerivedClassHasMethod("OnRtnExchangeStateInfo", swigMethodTypes26))
+      swigDelegate26 = new SwigDelegateITapTradeAPINotify_26(SwigDirectorOnRtnExchangeStateInfo);
+    TapTradePINVOKE.ITapTradeAPINotify_director_connect(swigCPtr, swigDelegate0, swigDelegate1, swigDelegate2, swigDelegate3, swigDelegate4, swigDelegate5, swigDelegate6, swigDelegate7, swigDelegate8, swigDelegate9, swigDelegate10, swigDelegate11, swigDelegate12, swigDelegate13, swigDelegate14, swigDelegate15, swigDelegate16, swigDelegate17, swigDelegate18, swigDelegate19, swigDelegate20, swigDelegate21, swigDelegate22, swigDelegate23, swigDelegate24, swigDelegate25, swigDelegate26);
   }
 
   private bool SwigDerivedClassHasMethod(string methodName, Type[] methodTypes) {
@@ -310,6 +322,14 @@ public class ITapTradeAPINotify : IDisposable {
     OnRspQryDeepQuote(sessionID, errorCode, isLast, (info == IntPtr.Zero) ? null : new TapAPIDeepQuoteQryRsp(info, false));
   }
 
+  private void SwigDirectorOnRspQryExchangeStateInfo(uint sessionID, int errorCode, char isLast, IntPtr info) {
+    OnRspQryExchangeStateInfo(sessionID, errorCode, isLast, (info == IntPtr.Zero) ? null : new TapAPIExchangeStateInfo(info, false));
+  }
+
+  private void SwigDirectorOnRtnExchangeStateInfo(IntPtr info) {
+    OnRtnExchangeStateInfo((info == IntPtr.Zero) ? null : new TapAPIExchangeStateInfoNotice(info, false));
+  }
+
   public delegate void SwigDelegateITapTradeAPINotify_0();
   public delegate void SwigDelegateITapTradeAPINotify_1(int errorCode, IntPtr loginRspInfo);
   public delegate void SwigDelegateITapTradeAPINotify_2();
@@ -335,6 +355,8 @@ public class ITapTradeAPINotify : IDisposable {
   public delegate void SwigDelegateITapTradeAPINotify_22(IntPtr info);
   public delegate void SwigDelegateITapTradeAPINotify_23(IntPtr info);
   public delegate void SwigDelegateITapTradeAPINotify_24(uint sessionID, int errorCode, char isLast, IntPtr info);
+  public delegate void SwigDelegateITapTradeAPINotify_25(uint sessionID, int errorCode, char isLast, IntPtr info);
+  public delegate void SwigDelegateITapTradeAPINotify_26(IntPtr info);
 
   private SwigDelegateITapTradeAPINotify_0 swigDelegate0;
   private SwigDelegateITapTradeAPINotify_1 swigDelegate1;
@@ -361,6 +383,8 @@ public class ITapTradeAPINotify : IDisposable {
   private SwigDelegateITapTradeAPINotify_22 swigDelegate22;
   private SwigDelegateITapTradeAPINotify_23 swigDelegate23;
   private SwigDelegateITapTradeAPINotify_24 swigDelegate24;
+  private SwigDelegateITapTradeAPINotify_25 swigDelegate25;
+  private SwigDelegateITapTradeAPINotify_26 swigDelegate26;
 
   private static Type[] swigMethodTypes0 = new Type[] {  };
   private static Type[] swigMethodTypes1 = new Type[] { typeof(int), typeof(TapAPITradeLoginRspInfo) };
@@ -387,6 +411,8 @@ public class ITapTradeAPINotify : IDisposable {
   private static Type[] swigMethodTypes22 = new Type[] { typeof(TapAPICloseInfo) };
   private static Type[] swigMethodTypes23 = new Type[] { typeof(TapAPIPositionProfitNotice) };
   private static Type[] swigMethodTypes24 = new Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIDeepQuoteQryRsp) };
+  private static Type[] swigMethodTypes25 = new Type[] { typeof(uint), typeof(int), typeof(char), typeof(TapAPIExchangeStateInfo) };
+  private static Type[] swigMethodTypes26 = new Type[] { typeof(TapAPIExchangeStateInfoNotice) };
 }
 
 }

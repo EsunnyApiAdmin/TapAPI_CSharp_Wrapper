@@ -41,6 +41,8 @@ public:
     virtual void TAP_CDECL OnRtnClose(TapAPICloseInfo const *info);
     virtual void TAP_CDECL OnRtnPositionProfit(TapAPIPositionProfitNotice const *info);
     virtual void TAP_CDECL OnRspQryDeepQuote(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, TapAPIDeepQuoteQryRsp const *info);
+    virtual void TAP_CDECL OnRspQryExchangeStateInfo(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, TapAPIExchangeStateInfo const *info);
+    virtual void TAP_CDECL OnRtnExchangeStateInfo(TapAPIExchangeStateInfoNotice const *info);
 
     typedef void (SWIGSTDCALL* SWIG_Callback0_t)();
     typedef void (SWIGSTDCALL* SWIG_Callback1_t)(int, void *);
@@ -67,7 +69,9 @@ public:
     typedef void (SWIGSTDCALL* SWIG_Callback22_t)(void *);
     typedef void (SWIGSTDCALL* SWIG_Callback23_t)(void *);
     typedef void (SWIGSTDCALL* SWIG_Callback24_t)(unsigned int, int, char, void *);
-    void swig_connect_director(SWIG_Callback0_t callbackOnConnect, SWIG_Callback1_t callbackOnRspLogin, SWIG_Callback2_t callbackOnAPIReady, SWIG_Callback3_t callbackOnDisconnect, SWIG_Callback4_t callbackOnRspChangePassword, SWIG_Callback5_t callbackOnRspSetReservedInfo, SWIG_Callback6_t callbackOnRspQryAccount, SWIG_Callback7_t callbackOnRspQryFund, SWIG_Callback8_t callbackOnRtnFund, SWIG_Callback9_t callbackOnRspQryExchange, SWIG_Callback10_t callbackOnRspQryCommodity, SWIG_Callback11_t callbackOnRspQryContract, SWIG_Callback12_t callbackOnRtnContract, SWIG_Callback13_t callbackOnRtnOrder, SWIG_Callback14_t callbackOnRspOrderAction, SWIG_Callback15_t callbackOnRspQryOrder, SWIG_Callback16_t callbackOnRspQryOrderProcess, SWIG_Callback17_t callbackOnRspQryFill, SWIG_Callback18_t callbackOnRtnFill, SWIG_Callback19_t callbackOnRspQryPosition, SWIG_Callback20_t callbackOnRtnPosition, SWIG_Callback21_t callbackOnRspQryClose, SWIG_Callback22_t callbackOnRtnClose, SWIG_Callback23_t callbackOnRtnPositionProfit, SWIG_Callback24_t callbackOnRspQryDeepQuote);
+    typedef void (SWIGSTDCALL* SWIG_Callback25_t)(unsigned int, int, char, void *);
+    typedef void (SWIGSTDCALL* SWIG_Callback26_t)(void *);
+    void swig_connect_director(SWIG_Callback0_t callbackOnConnect, SWIG_Callback1_t callbackOnRspLogin, SWIG_Callback2_t callbackOnAPIReady, SWIG_Callback3_t callbackOnDisconnect, SWIG_Callback4_t callbackOnRspChangePassword, SWIG_Callback5_t callbackOnRspSetReservedInfo, SWIG_Callback6_t callbackOnRspQryAccount, SWIG_Callback7_t callbackOnRspQryFund, SWIG_Callback8_t callbackOnRtnFund, SWIG_Callback9_t callbackOnRspQryExchange, SWIG_Callback10_t callbackOnRspQryCommodity, SWIG_Callback11_t callbackOnRspQryContract, SWIG_Callback12_t callbackOnRtnContract, SWIG_Callback13_t callbackOnRtnOrder, SWIG_Callback14_t callbackOnRspOrderAction, SWIG_Callback15_t callbackOnRspQryOrder, SWIG_Callback16_t callbackOnRspQryOrderProcess, SWIG_Callback17_t callbackOnRspQryFill, SWIG_Callback18_t callbackOnRtnFill, SWIG_Callback19_t callbackOnRspQryPosition, SWIG_Callback20_t callbackOnRtnPosition, SWIG_Callback21_t callbackOnRspQryClose, SWIG_Callback22_t callbackOnRtnClose, SWIG_Callback23_t callbackOnRtnPositionProfit, SWIG_Callback24_t callbackOnRspQryDeepQuote, SWIG_Callback25_t callbackOnRspQryExchangeStateInfo, SWIG_Callback26_t callbackOnRtnExchangeStateInfo);
 
 private:
     SWIG_Callback0_t swig_callbackOnConnect;
@@ -95,6 +99,8 @@ private:
     SWIG_Callback22_t swig_callbackOnRtnClose;
     SWIG_Callback23_t swig_callbackOnRtnPositionProfit;
     SWIG_Callback24_t swig_callbackOnRspQryDeepQuote;
+    SWIG_Callback25_t swig_callbackOnRspQryExchangeStateInfo;
+    SWIG_Callback26_t swig_callbackOnRtnExchangeStateInfo;
     void swig_init_callbacks();
 };
 

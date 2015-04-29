@@ -249,6 +249,9 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_UDP_LISTENING_get")]
   public static extern int TAPIERROR_UDP_LISTENING_get();
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_NotImplemented_get")]
+  public static extern int TAPIERROR_NotImplemented_get();
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_INPUTERROR_NULL_get")]
   public static extern int TAPIERROR_INPUTERROR_NULL_get();
 
@@ -396,6 +399,12 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType_get")]
   public static extern int TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType_get();
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_INPUTERROR_TAPITradingStateType_get")]
+  public static extern int TAPIERROR_INPUTERROR_TAPITradingStateType_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_INPUTERROR_TAPIMarketLevelType_get")]
+  public static extern int TAPIERROR_INPUTERROR_TAPIMarketLevelType_get();
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_INPUTERROR_QryHisQuoteParam_get")]
   public static extern int TAPIERROR_INPUTERROR_QryHisQuoteParam_get();
 
@@ -479,6 +488,9 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_USERINFO_DEL_get")]
   public static extern int TAPIERROR_USERINFO_DEL_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNTNO_IN_USERINFO_DEL_get")]
+  public static extern int TAPIERROR_ACCOUNTNO_IN_USERINFO_DEL_get();
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_USERSTATE_QRY_get")]
   public static extern int TAPIERROR_USERSTATE_QRY_get();
@@ -590,6 +602,9 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_GROUPACCOUNT_DEL_get")]
   public static extern int TAPIERROR_GROUPACCOUNT_DEL_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_GROUPACCOUNT_ONETOONE_get")]
+  public static extern int TAPIERROR_GROUPACCOUNT_ONETOONE_get();
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_USERGROUP_QRY_get")]
   public static extern int TAPIERROR_USERGROUP_QRY_get();
@@ -726,6 +741,12 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ORDERINSERT_CLOSEMODE_get")]
   public static extern int TAPIERROR_ORDERINSERT_CLOSEMODE_get();
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND_get")]
+  public static extern int TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_SWAP_CONTRACT_get")]
+  public static extern int TAPIERROR_SWAP_CONTRACT_get();
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_USERNO_NOTHAS_ACCOUNT_get")]
   public static extern int TAPIERROR_USERNO_NOTHAS_ACCOUNT_get();
 
@@ -765,6 +786,21 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ORDER_NO_PERMIT_get")]
   public static extern int TAPIERROR_ORDER_NO_PERMIT_get();
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_RSPQUOTE_NO_PERMIT_get")]
+  public static extern int TAPIERROR_RSPQUOTE_NO_PERMIT_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT_get")]
+  public static extern int TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_TRADENO_NOT_FIND_get")]
+  public static extern int TAPIERROR_TRADENO_NOT_FIND_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ORDER_NO_CLOSE_get")]
+  public static extern int TAPIERROR_ORDER_NO_CLOSE_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_QRY_QUOTE_NO_PERMIT_get")]
+  public static extern int TAPIERROR_QRY_QUOTE_NO_PERMIT_get();
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_CURRENCYINFO_QRY_get")]
   public static extern int TAPIERROR_CURRENCYINFO_QRY_get();
 
@@ -800,6 +836,9 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNTINFO_MOD_get")]
   public static extern int TAPIERROR_ACCOUNTINFO_MOD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ALLACCOUNTINFO_QRY_get")]
+  public static extern int TAPIERROR_ALLACCOUNTINFO_QRY_get();
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ORGINFO_QRY_get")]
   public static extern int TAPIERROR_ORGINFO_QRY_get();
@@ -1485,6 +1524,9 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ATTRIBUTELEVELINFO_MOD_get")]
   public static extern int TAPIERROR_ATTRIBUTELEVELINFO_MOD_get();
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ATTRIBUTELEVELINFO_CASCADE_DEL_get")]
+  public static extern int TAPIERROR_ATTRIBUTELEVELINFO_CASCADE_DEL_get();
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_CALENDARTEMPLATEINFO_QRY_get")]
   public static extern int TAPIERROR_CALENDARTEMPLATEINFO_QRY_get();
 
@@ -1854,6 +1896,102 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNT_MINMAX_FEETEMPLATE_MOD_get")]
   public static extern int TAPIERROR_ACCOUNT_MINMAX_FEETEMPLATE_MOD_get();
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNT_SEAT_INFO_QRY_get")]
+  public static extern int TAPIERROR_ACCOUNT_SEAT_INFO_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNT_SEAT_INFO_ADD_get")]
+  public static extern int TAPIERROR_ACCOUNT_SEAT_INFO_ADD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNT_SEAT_INFO_DEL_get")]
+  public static extern int TAPIERROR_ACCOUNT_SEAT_INFO_DEL_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_SEAT_INFO_QRY_get")]
+  public static extern int TAPIERROR_SEAT_INFO_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_SEAT_INFO_ADD_get")]
+  public static extern int TAPIERROR_SEAT_INFO_ADD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_SEAT_INFO_DEL_get")]
+  public static extern int TAPIERROR_SEAT_INFO_DEL_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_SEAT_INFO_MAIN_EXIT_ADD_get")]
+  public static extern int TAPIERROR_SEAT_INFO_MAIN_EXIT_ADD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNTFEE_PARAMETER_QRY_get")]
+  public static extern int TAPIERROR_ACCOUNTFEE_PARAMETER_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNTMARGIN_PARAMETER_QRY_get")]
+  public static extern int TAPIERROR_ACCOUNTMARGIN_PARAMETER_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_TEMPLATEFEE_BATCH_MOD_get")]
+  public static extern int TAPIERROR_TEMPLATEFEE_BATCH_MOD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_TEMPLATEMARGIN_BATCH_MOD_get")]
+  public static extern int TAPIERROR_TEMPLATEMARGIN_BATCH_MOD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREIGN_EXCHANGE_NEWRATE_QRY_get")]
+  public static extern int TAPIERROR_FOREIGN_EXCHANGE_NEWRATE_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREIGN_EXCHANGE_CURRATE_QRY_get")]
+  public static extern int TAPIERROR_FOREIGN_EXCHANGE_CURRATE_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREIGN_EXCHANGE_RATE_MOD_get")]
+  public static extern int TAPIERROR_FOREIGN_EXCHANGE_RATE_MOD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREIGN_EXCHANGE_RATE_ADD_get")]
+  public static extern int TAPIERROR_FOREIGN_EXCHANGE_RATE_ADD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREIGN_EXCHANGE_RATE_DEL_get")]
+  public static extern int TAPIERROR_FOREIGN_EXCHANGE_RATE_DEL_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_MAIL_INFO_QRY_get")]
+  public static extern int TAPIERROR_MAIL_INFO_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_MAIL_INFO_ADD_get")]
+  public static extern int TAPIERROR_MAIL_INFO_ADD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_MAIL_INFO_MOD_get")]
+  public static extern int TAPIERROR_MAIL_INFO_MOD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_MAIL_INFO_DEL_get")]
+  public static extern int TAPIERROR_MAIL_INFO_DEL_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREX_RATE_INFO_QRY_get")]
+  public static extern int TAPIERROR_FOREX_RATE_INFO_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREX_RATE_INFO_ADD_get")]
+  public static extern int TAPIERROR_FOREX_RATE_INFO_ADD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREX_RATE_INFO_MOD_get")]
+  public static extern int TAPIERROR_FOREX_RATE_INFO_MOD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREX_RATE_INFO_DEL_get")]
+  public static extern int TAPIERROR_FOREX_RATE_INFO_DEL_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREX_HOLIDAY_QRY_get")]
+  public static extern int TAPIERROR_FOREX_HOLIDAY_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREX_HOLIDAY_ADD_get")]
+  public static extern int TAPIERROR_FOREX_HOLIDAY_ADD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREX_HOLIDAY_MOD_get")]
+  public static extern int TAPIERROR_FOREX_HOLIDAY_MOD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREX_HOLIDAY_DEL_get")]
+  public static extern int TAPIERROR_FOREX_HOLIDAY_DEL_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNT_RELATEINFO_QRY_get")]
+  public static extern int TAPIERROR_ACCOUNT_RELATEINFO_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNT_RELATEINFO_ADD_get")]
+  public static extern int TAPIERROR_ACCOUNT_RELATEINFO_ADD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNT_RELATEINFO_MOD_get")]
+  public static extern int TAPIERROR_ACCOUNT_RELATEINFO_MOD_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNT_RELATEINFO_DEL_get")]
+  public static extern int TAPIERROR_ACCOUNT_RELATEINFO_DEL_get();
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_HISORDER_QRY_get")]
   public static extern int TAPIERROR_HISORDER_QRY_get();
 
@@ -1866,6 +2004,9 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_HISORDER_DEL_get")]
   public static extern int TAPIERROR_HISORDER_DEL_get();
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ORDERFORTRADE_QRY_get")]
+  public static extern int TAPIERROR_ORDERFORTRADE_QRY_get();
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_HISMATCH_QRY_get")]
   public static extern int TAPIERROR_HISMATCH_QRY_get();
 
@@ -1877,6 +2018,9 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_HISMATCH_DEL_get")]
   public static extern int TAPIERROR_HISMATCH_DEL_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_MATCHFORTRADE_QRY_get")]
+  public static extern int TAPIERROR_MATCHFORTRADE_QRY_get();
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_HISPOSITION_QRY_get")]
   public static extern int TAPIERROR_HISPOSITION_QRY_get();
@@ -2193,6 +2337,96 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNTAUTHCASH_DEL_REQ_get")]
   public static extern int TAPIERROR_ACCOUNTAUTHCASH_DEL_REQ_get();
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_FOREIGNPOSITION_CHECK_REQ_get")]
+  public static extern int TAPIERROR_FOREIGNPOSITION_CHECK_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNTFUND_CHECK_REQ_get")]
+  public static extern int TAPIERROR_ACCOUNTFUND_CHECK_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_UNEXPCLOSE_CHECK_REQ_get")]
+  public static extern int TAPIERROR_UNEXPCLOSE_CHECK_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_OTHERFUND_QRY_REQ_get")]
+  public static extern int TAPIERROR_OTHERFUND_QRY_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_OTHERFUND_ADD_REQ_get")]
+  public static extern int TAPIERROR_OTHERFUND_ADD_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_OTHERFUND_MOD_REQ_get")]
+  public static extern int TAPIERROR_OTHERFUND_MOD_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_OTHERFUND_DEL_REQ_get")]
+  public static extern int TAPIERROR_OTHERFUND_DEL_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNTFUND_NOTICE_REQ_get")]
+  public static extern int TAPIERROR_ACCOUNTFUND_NOTICE_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_QRY_REQ_get")]
+  public static extern int TAPIERROR_POSITIONMOVEBYACCOUNT_QRY_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_ADD_REQ_get")]
+  public static extern int TAPIERROR_POSITIONMOVEBYACCOUNT_ADD_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_MOD_REQ_get")]
+  public static extern int TAPIERROR_POSITIONMOVEBYACCOUNT_MOD_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_DEL_REQ_get")]
+  public static extern int TAPIERROR_POSITIONMOVEBYACCOUNT_DEL_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ADJUSTMATCH_REQ_get")]
+  public static extern int TAPIERROR_ADJUSTMATCH_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_SWAPREPORT_REQ_get")]
+  public static extern int TAPIERROR_SWAPREPORT_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ADDFOURCEREPORT_REQ_get")]
+  public static extern int TAPIERROR_ADDFOURCEREPORT_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNTFUNDREPORT_REQ_get")]
+  public static extern int TAPIERROR_ACCOUNTFUNDREPORT_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_DELIVERYALARMREPORT_REQ_get")]
+  public static extern int TAPIERROR_DELIVERYALARMREPORT_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_OHCL_QRY_REQ_get")]
+  public static extern int TAPIERROR_OHCL_QRY_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_OHCL_ADD_REQ_get")]
+  public static extern int TAPIERROR_OHCL_ADD_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_OHCL_MOD_REQ_get")]
+  public static extern int TAPIERROR_OHCL_MOD_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_OHCL_DEL_REQ_get")]
+  public static extern int TAPIERROR_OHCL_DEL_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_TODELIVERY_QRY_REQ_get")]
+  public static extern int TAPIERROR_TODELIVERY_QRY_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_TODELIVERY_ADD_REQ_get")]
+  public static extern int TAPIERROR_TODELIVERY_ADD_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_TODELIVERY_MOD_REQ_get")]
+  public static extern int TAPIERROR_TODELIVERY_MOD_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_TODELIVERY_DEL_REQ_get")]
+  public static extern int TAPIERROR_TODELIVERY_DEL_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNTPLEDGE_QRY_REQ_get")]
+  public static extern int TAPIERROR_ACCOUNTPLEDGE_QRY_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ACCOUNTPLEDGE_ADD_REQ_get")]
+  public static extern int TAPIERROR_ACCOUNTPLEDGE_ADD_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_SETTLESALE_QRY_REQ_get")]
+  public static extern int TAPIERROR_SETTLESALE_QRY_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_SETTLESALE_ADD_REQ_get")]
+  public static extern int TAPIERROR_SETTLESALE_ADD_REQ_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_SETTLESALE_DEL_REQ_get")]
+  public static extern int TAPIERROR_SETTLESALE_DEL_REQ_get();
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_ORDER_FREQUENCY_get")]
   public static extern int TAPIERROR_ORDER_FREQUENCY_get();
 
@@ -2478,6 +2712,12 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_TRADEFRONT_NODATA_get")]
   public static extern int TAPIERROR_TRADEFRONT_NODATA_get();
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_TRADEFRONT_DICONNECT_SMTRADE_get")]
+  public static extern int TAPIERROR_TRADEFRONT_DICONNECT_SMTRADE_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_TRADEFRONT_DICONNECT_TRADE_get")]
+  public static extern int TAPIERROR_TRADEFRONT_DICONNECT_TRADE_get();
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL_get")]
   public static extern int TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL_get();
 
@@ -2537,6 +2777,18 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_CASHIN_NOREVERSE_get")]
   public static extern int TAPIERROR_CASHIN_NOREVERSE_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_RISKCOMMODITY_QRY_get")]
+  public static extern int TAPIERROR_RISKCOMMODITY_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_RISKCONTRACT_FUND_get")]
+  public static extern int TAPIERROR_RISKCONTRACT_FUND_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_RISKFUND_QRY_get")]
+  public static extern int TAPIERROR_RISKFUND_QRY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPIERROR_CONTRACTQUOTE_ADD_get")]
+  public static extern int TAPIERROR_CONTRACTQUOTE_ADD_get();
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_APIYNFLAG_YES_get")]
   public static extern char APIYNFLAG_YES_get();
@@ -2769,6 +3021,12 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_RIGHT_ONLY_QRY_get")]
   public static extern int TAPI_RIGHT_ONLY_QRY_get();
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_RIGHT_ONLY_OPEN_get")]
+  public static extern int TAPI_RIGHT_ONLY_OPEN_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_RIGHT_SHFE_QUOTE_get")]
+  public static extern int TAPI_RIGHT_SHFE_QUOTE_get();
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_USERTYPE_CLIENT_get")]
   public static extern int TAPI_USERTYPE_CLIENT_get();
 
@@ -2847,6 +3105,18 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_ORDER_SOURCE_PROGRAM_get")]
   public static extern char TAPI_ORDER_SOURCE_PROGRAM_get();
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_ORDER_SOURCE_DELIVERY_get")]
+  public static extern char TAPI_ORDER_SOURCE_DELIVERY_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_ORDER_SOURCE_ABANDON_get")]
+  public static extern char TAPI_ORDER_SOURCE_ABANDON_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_ORDER_SOURCE_CHANNEL_get")]
+  public static extern char TAPI_ORDER_SOURCE_CHANNEL_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_ORDER_SOURCE_ESUNNY_API_get")]
+  public static extern char TAPI_ORDER_SOURCE_ESUNNY_API_get();
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_ORDER_TIMEINFORCE_GFD_get")]
   public static extern char TAPI_ORDER_TIMEINFORCE_GFD_get();
 
@@ -2891,6 +3161,9 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_HEDGEFLAG_B_get")]
   public static extern char TAPI_HEDGEFLAG_B_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_HEDGEFLAG_L_get")]
+  public static extern char TAPI_HEDGEFLAG_L_get();
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_ORDER_STATE_SUBMIT_get")]
   public static extern char TAPI_ORDER_STATE_SUBMIT_get();
@@ -2987,6 +3260,9 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_MATCH_SOURCE_CHANNEL_get")]
   public static extern char TAPI_MATCH_SOURCE_CHANNEL_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_MATCH_SOURCE_ESUNNY_API_get")]
+  public static extern char TAPI_MATCH_SOURCE_ESUNNY_API_get();
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_CLOSE_MODE_NONE_get")]
   public static extern char TAPI_CLOSE_MODE_NONE_get();
@@ -3101,6 +3377,48 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_TRIGGER_PRICE_LAST_get")]
   public static extern char TAPI_TRIGGER_PRICE_LAST_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_MARKET_LEVEL_0_get")]
+  public static extern byte TAPI_MARKET_LEVEL_0_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_MARKET_LEVEL_1_get")]
+  public static extern byte TAPI_MARKET_LEVEL_1_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_MARKET_LEVEL_5_get")]
+  public static extern byte TAPI_MARKET_LEVEL_5_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_MARKET_LEVEL_10_get")]
+  public static extern byte TAPI_MARKET_LEVEL_10_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_TRADE_STATE_BID_get")]
+  public static extern char TAPI_TRADE_STATE_BID_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_TRADE_STATE_MATCH_get")]
+  public static extern char TAPI_TRADE_STATE_MATCH_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_TRADE_STATE_CONTINUOUS_get")]
+  public static extern char TAPI_TRADE_STATE_CONTINUOUS_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_TRADE_STATE_PAUSED_get")]
+  public static extern char TAPI_TRADE_STATE_PAUSED_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_TRADE_STATE_CLOSE_get")]
+  public static extern char TAPI_TRADE_STATE_CLOSE_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_TRADE_STATE_DEALLAST_get")]
+  public static extern char TAPI_TRADE_STATE_DEALLAST_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_TRADE_STATE_GWDISCONNECT_get")]
+  public static extern char TAPI_TRADE_STATE_GWDISCONNECT_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_TRADE_STATE_UNKNOWN_get")]
+  public static extern char TAPI_TRADE_STATE_UNKNOWN_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_TRADE_STATE_INITIALIZE_get")]
+  public static extern char TAPI_TRADE_STATE_INITIALIZE_get();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TAPI_TRADE_STATE_READY_get")]
+  public static extern char TAPI_TRADE_STATE_READY_get();
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPITradeLoginAuth_UserNo_set")]
   public static extern void TapAPITradeLoginAuth_UserNo_set(HandleRef jarg1, string jarg2);
@@ -3497,6 +3815,24 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPINewOrder_AddOneIsValid_get")]
   public static extern char TapAPINewOrder_AddOneIsValid_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPINewOrder_OrderQty2_set")]
+  public static extern void TapAPINewOrder_OrderQty2_set(HandleRef jarg1, uint jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPINewOrder_OrderQty2_get")]
+  public static extern uint TapAPINewOrder_OrderQty2_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPINewOrder_HedgeFlag2_set")]
+  public static extern void TapAPINewOrder_HedgeFlag2_set(HandleRef jarg1, char jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPINewOrder_HedgeFlag2_get")]
+  public static extern char TapAPINewOrder_HedgeFlag2_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPINewOrder_MarketLevel_set")]
+  public static extern void TapAPINewOrder_MarketLevel_set(HandleRef jarg1, byte jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPINewOrder_MarketLevel_get")]
+  public static extern byte TapAPINewOrder_MarketLevel_get(HandleRef jarg1);
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPINewOrder__SWIG_0")]
   public static extern IntPtr new_TapAPINewOrder__SWIG_0();
@@ -4101,6 +4437,24 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIOrderInfo_AddOneIsValid_get")]
   public static extern char TapAPIOrderInfo_AddOneIsValid_get(HandleRef jarg1);
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIOrderInfo_OrderQty2_set")]
+  public static extern void TapAPIOrderInfo_OrderQty2_set(HandleRef jarg1, uint jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIOrderInfo_OrderQty2_get")]
+  public static extern uint TapAPIOrderInfo_OrderQty2_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIOrderInfo_HedgeFlag2_set")]
+  public static extern void TapAPIOrderInfo_HedgeFlag2_set(HandleRef jarg1, char jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIOrderInfo_HedgeFlag2_get")]
+  public static extern char TapAPIOrderInfo_HedgeFlag2_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIOrderInfo_MarketLevel_set")]
+  public static extern void TapAPIOrderInfo_MarketLevel_set(HandleRef jarg1, byte jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIOrderInfo_MarketLevel_get")]
+  public static extern byte TapAPIOrderInfo_MarketLevel_get(HandleRef jarg1);
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPIOrderInfo__SWIG_0")]
   public static extern IntPtr new_TapAPIOrderInfo__SWIG_0();
 
@@ -4632,6 +4986,12 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFillInfo_QuotePrice_get")]
   public static extern double TapAPIFillInfo_QuotePrice_get(HandleRef jarg1);
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFillInfo_ClosePL_set")]
+  public static extern void TapAPIFillInfo_ClosePL_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFillInfo_ClosePL_get")]
+  public static extern double TapAPIFillInfo_ClosePL_get(HandleRef jarg1);
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPIFillInfo__SWIG_0")]
   public static extern IntPtr new_TapAPIFillInfo__SWIG_0();
 
@@ -5016,6 +5376,12 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIPositionInfo_IsHistory_get")]
   public static extern char TapAPIPositionInfo_IsHistory_get(HandleRef jarg1);
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIPositionInfo_FloatingPL_set")]
+  public static extern void TapAPIPositionInfo_FloatingPL_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIPositionInfo_FloatingPL_get")]
+  public static extern double TapAPIPositionInfo_FloatingPL_get(HandleRef jarg1);
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPIPositionInfo__SWIG_0")]
   public static extern IntPtr new_TapAPIPositionInfo__SWIG_0();
 
@@ -5060,6 +5426,12 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIPositionProfit_CalculatePrice_get")]
   public static extern double TapAPIPositionProfit_CalculatePrice_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIPositionProfit_FloatingPL_set")]
+  public static extern void TapAPIPositionProfit_FloatingPL_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIPositionProfit_FloatingPL_get")]
+  public static extern double TapAPIPositionProfit_FloatingPL_get(HandleRef jarg1);
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPIPositionProfit__SWIG_0")]
   public static extern IntPtr new_TapAPIPositionProfit__SWIG_0();
@@ -5330,6 +5702,12 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPICloseInfo_UnExpProfit_get")]
   public static extern double TapAPICloseInfo_UnExpProfit_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPICloseInfo_ClosePL_set")]
+  public static extern void TapAPICloseInfo_ClosePL_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPICloseInfo_ClosePL_get")]
+  public static extern double TapAPICloseInfo_ClosePL_get(HandleRef jarg1);
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPICloseInfo__SWIG_0")]
   public static extern IntPtr new_TapAPICloseInfo__SWIG_0();
@@ -5606,6 +5984,108 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_OriginalCashInOut_get")]
   public static extern double TapAPIFundData_OriginalCashInOut_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_FloatingPL_set")]
+  public static extern void TapAPIFundData_FloatingPL_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_FloatingPL_get")]
+  public static extern double TapAPIFundData_FloatingPL_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_FrozenRiskFundValue_set")]
+  public static extern void TapAPIFundData_FrozenRiskFundValue_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_FrozenRiskFundValue_get")]
+  public static extern double TapAPIFundData_FrozenRiskFundValue_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_ClosePL_set")]
+  public static extern void TapAPIFundData_ClosePL_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_ClosePL_get")]
+  public static extern double TapAPIFundData_ClosePL_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_NoCurrencyPledgeValue_set")]
+  public static extern void TapAPIFundData_NoCurrencyPledgeValue_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_NoCurrencyPledgeValue_get")]
+  public static extern double TapAPIFundData_NoCurrencyPledgeValue_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_PrePledgeValue_set")]
+  public static extern void TapAPIFundData_PrePledgeValue_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_PrePledgeValue_get")]
+  public static extern double TapAPIFundData_PrePledgeValue_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_PledgeIn_set")]
+  public static extern void TapAPIFundData_PledgeIn_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_PledgeIn_get")]
+  public static extern double TapAPIFundData_PledgeIn_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_PledgeOut_set")]
+  public static extern void TapAPIFundData_PledgeOut_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_PledgeOut_get")]
+  public static extern double TapAPIFundData_PledgeOut_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_PledgeValue_set")]
+  public static extern void TapAPIFundData_PledgeValue_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_PledgeValue_get")]
+  public static extern double TapAPIFundData_PledgeValue_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_BorrowValue_set")]
+  public static extern void TapAPIFundData_BorrowValue_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_BorrowValue_get")]
+  public static extern double TapAPIFundData_BorrowValue_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialAccountFrozenMargin_set")]
+  public static extern void TapAPIFundData_SpecialAccountFrozenMargin_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialAccountFrozenMargin_get")]
+  public static extern double TapAPIFundData_SpecialAccountFrozenMargin_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialAccountMargin_set")]
+  public static extern void TapAPIFundData_SpecialAccountMargin_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialAccountMargin_get")]
+  public static extern double TapAPIFundData_SpecialAccountMargin_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialAccountFrozenFee_set")]
+  public static extern void TapAPIFundData_SpecialAccountFrozenFee_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialAccountFrozenFee_get")]
+  public static extern double TapAPIFundData_SpecialAccountFrozenFee_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialAccountFee_set")]
+  public static extern void TapAPIFundData_SpecialAccountFee_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialAccountFee_get")]
+  public static extern double TapAPIFundData_SpecialAccountFee_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialFloatProfit_set")]
+  public static extern void TapAPIFundData_SpecialFloatProfit_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialFloatProfit_get")]
+  public static extern double TapAPIFundData_SpecialFloatProfit_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialCloseProfit_set")]
+  public static extern void TapAPIFundData_SpecialCloseProfit_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialCloseProfit_get")]
+  public static extern double TapAPIFundData_SpecialCloseProfit_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialFloatPL_set")]
+  public static extern void TapAPIFundData_SpecialFloatPL_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialFloatPL_get")]
+  public static extern double TapAPIFundData_SpecialFloatPL_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialClosePL_set")]
+  public static extern void TapAPIFundData_SpecialClosePL_set(HandleRef jarg1, double jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIFundData_SpecialClosePL_get")]
+  public static extern double TapAPIFundData_SpecialClosePL_get(HandleRef jarg1);
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPIFundData__SWIG_0")]
   public static extern IntPtr new_TapAPIFundData__SWIG_0();
@@ -5940,6 +6420,81 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_delete_TapAPIDeepQuoteQryRsp")]
   public static extern void delete_TapAPIDeepQuoteQryRsp(HandleRef jarg1);
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPIExchangeStateInfoQryReq__SWIG_0")]
+  public static extern IntPtr new_TapAPIExchangeStateInfoQryReq__SWIG_0();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPIExchangeStateInfoQryReq__SWIG_1")]
+  public static extern IntPtr new_TapAPIExchangeStateInfoQryReq__SWIG_1(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_delete_TapAPIExchangeStateInfoQryReq")]
+  public static extern void delete_TapAPIExchangeStateInfoQryReq(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_UpperChannelNo_set")]
+  public static extern void TapAPIExchangeStateInfo_UpperChannelNo_set(HandleRef jarg1, string jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_UpperChannelNo_get")]
+  public static extern string TapAPIExchangeStateInfo_UpperChannelNo_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_ExchangeNo_set")]
+  public static extern void TapAPIExchangeStateInfo_ExchangeNo_set(HandleRef jarg1, string jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_ExchangeNo_get")]
+  public static extern string TapAPIExchangeStateInfo_ExchangeNo_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_CommodityType_set")]
+  public static extern void TapAPIExchangeStateInfo_CommodityType_set(HandleRef jarg1, char jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_CommodityType_get")]
+  public static extern char TapAPIExchangeStateInfo_CommodityType_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_CommodityNo_set")]
+  public static extern void TapAPIExchangeStateInfo_CommodityNo_set(HandleRef jarg1, string jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_CommodityNo_get")]
+  public static extern string TapAPIExchangeStateInfo_CommodityNo_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_ExchangeTime_set")]
+  public static extern void TapAPIExchangeStateInfo_ExchangeTime_set(HandleRef jarg1, string jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_ExchangeTime_get")]
+  public static extern string TapAPIExchangeStateInfo_ExchangeTime_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_TradingState_set")]
+  public static extern void TapAPIExchangeStateInfo_TradingState_set(HandleRef jarg1, char jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfo_TradingState_get")]
+  public static extern char TapAPIExchangeStateInfo_TradingState_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPIExchangeStateInfo__SWIG_0")]
+  public static extern IntPtr new_TapAPIExchangeStateInfo__SWIG_0();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPIExchangeStateInfo__SWIG_1")]
+  public static extern IntPtr new_TapAPIExchangeStateInfo__SWIG_1(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_delete_TapAPIExchangeStateInfo")]
+  public static extern void delete_TapAPIExchangeStateInfo(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfoNotice_IsLast_set")]
+  public static extern void TapAPIExchangeStateInfoNotice_IsLast_set(HandleRef jarg1, char jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfoNotice_IsLast_get")]
+  public static extern char TapAPIExchangeStateInfoNotice_IsLast_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfoNotice_ExchangeStateInfo_set")]
+  public static extern void TapAPIExchangeStateInfoNotice_ExchangeStateInfo_set(HandleRef jarg1, HandleRef jarg2);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_TapAPIExchangeStateInfoNotice_ExchangeStateInfo_get")]
+  public static extern IntPtr TapAPIExchangeStateInfoNotice_ExchangeStateInfo_get(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPIExchangeStateInfoNotice__SWIG_0")]
+  public static extern IntPtr new_TapAPIExchangeStateInfoNotice__SWIG_0();
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_TapAPIExchangeStateInfoNotice__SWIG_1")]
+  public static extern IntPtr new_TapAPIExchangeStateInfoNotice__SWIG_1(HandleRef jarg1);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_delete_TapAPIExchangeStateInfoNotice")]
+  public static extern void delete_TapAPIExchangeStateInfoNotice(HandleRef jarg1);
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_ITapTradeAPINotify_OnConnect")]
   public static extern void ITapTradeAPINotify_OnConnect(HandleRef jarg1);
 
@@ -6015,6 +6570,12 @@ class TapTradePINVOKE {
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_ITapTradeAPINotify_OnRspQryDeepQuote")]
   public static extern void ITapTradeAPINotify_OnRspQryDeepQuote(HandleRef jarg1, uint jarg2, int jarg3, char jarg4, HandleRef jarg5);
 
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_ITapTradeAPINotify_OnRspQryExchangeStateInfo")]
+  public static extern void ITapTradeAPINotify_OnRspQryExchangeStateInfo(HandleRef jarg1, uint jarg2, int jarg3, char jarg4, HandleRef jarg5);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_ITapTradeAPINotify_OnRtnExchangeStateInfo")]
+  public static extern void ITapTradeAPINotify_OnRtnExchangeStateInfo(HandleRef jarg1, HandleRef jarg2);
+
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_new_ITapTradeAPINotify__SWIG_0")]
   public static extern IntPtr new_ITapTradeAPINotify__SWIG_0();
 
@@ -6025,7 +6586,7 @@ class TapTradePINVOKE {
   public static extern void delete_ITapTradeAPINotify(HandleRef jarg1);
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_ITapTradeAPINotify_director_connect")]
-  public static extern void ITapTradeAPINotify_director_connect(HandleRef jarg1, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_0 delegate0, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_1 delegate1, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_2 delegate2, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_3 delegate3, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_4 delegate4, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_5 delegate5, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_6 delegate6, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_7 delegate7, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_8 delegate8, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_9 delegate9, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_10 delegate10, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_11 delegate11, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_12 delegate12, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_13 delegate13, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_14 delegate14, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_15 delegate15, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_16 delegate16, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_17 delegate17, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_18 delegate18, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_19 delegate19, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_20 delegate20, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_21 delegate21, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_22 delegate22, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_23 delegate23, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_24 delegate24);
+  public static extern void ITapTradeAPINotify_director_connect(HandleRef jarg1, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_0 delegate0, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_1 delegate1, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_2 delegate2, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_3 delegate3, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_4 delegate4, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_5 delegate5, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_6 delegate6, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_7 delegate7, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_8 delegate8, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_9 delegate9, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_10 delegate10, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_11 delegate11, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_12 delegate12, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_13 delegate13, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_14 delegate14, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_15 delegate15, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_16 delegate16, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_17 delegate17, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_18 delegate18, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_19 delegate19, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_20 delegate20, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_21 delegate21, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_22 delegate22, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_23 delegate23, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_24 delegate24, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_25 delegate25, ITapTradeAPINotify.SwigDelegateITapTradeAPINotify_26 delegate26);
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_ITapTradeAPI_SetAPINotify")]
   public static extern int ITapTradeAPI_SetAPINotify(HandleRef jarg1, HandleRef jarg2);
@@ -6086,6 +6647,9 @@ class TapTradePINVOKE {
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_ITapTradeAPI_QryDeepQuote")]
   public static extern int ITapTradeAPI_QryDeepQuote(HandleRef jarg1, out uint jarg2, HandleRef jarg3);
+
+  [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_ITapTradeAPI_QryExchangeStateInfo")]
+  public static extern int ITapTradeAPI_QryExchangeStateInfo(HandleRef jarg1, out uint jarg2, HandleRef jarg3);
 
   [DllImport("TapTradeAPIWrapper", EntryPoint="CSharp_delete_ITapTradeAPI")]
   public static extern void delete_ITapTradeAPI(HandleRef jarg1);

@@ -198,6 +198,8 @@ struct TapAPIQuoteWhole
 	TAPIQPRICE					QChangeRate;					///< 涨幅
 	TAPIQPRICE					QChangeValue;					///< 涨跌值
 	TAPIQPRICE					QSwing;							///< 振幅
+	TAPIQVOLUME					QTotalBidQty;					///< 委买总量
+	TAPIQVOLUME					QTotalAskQty;					///< 委卖总量
 };
 
 
@@ -215,7 +217,6 @@ struct TapAPIHisQuote
 	TAPIQPRICE					QHighPrice;						///< 最高价
 	TAPIQPRICE					QLowPrice;						///< 最低价
 	TAPIQVOLUME					QTotalQty;						///< 当日总成交量
-	TAPIQPRICE					QTotalTurnover;					///< 当日成交金额
 	TAPIQVOLUME					QPositionQty;					///< 持仓量
 	TAPIQPRICE					QSettlePrice;					///< 结算价
 	TAPIQVOLUME					QKLineTotalQty;					///< K线总成交量

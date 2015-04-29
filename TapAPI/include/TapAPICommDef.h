@@ -129,35 +129,35 @@ typedef TAPICHAR               TAPICommodityType;
 //! 无
 const TAPICommodityType		TAPI_COMMODITY_TYPE_NONE				= 'N';
 //! 现货
-const TAPICommodityType		TAPI_COMMODITY_TYPE_SPOT             = 'P';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_SPOT				= 'P';
 //! 期货
-const TAPICommodityType		TAPI_COMMODITY_TYPE_FUTURES			= 'F';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_FUTURES				= 'F';
 //! 期权
-const TAPICommodityType		TAPI_COMMODITY_TYPE_OPTION			= 'O';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_OPTION				= 'O';
 //! 跨期套利
 const TAPICommodityType		TAPI_COMMODITY_TYPE_SPREAD_MONTH		= 'S';
 //! 跨品种套利
-const TAPICommodityType		TAPI_COMMODITY_TYPE_SPREAD_COMMODITY = 'M';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_SPREAD_COMMODITY	= 'M';
 //! 看涨垂直套利
-const TAPICommodityType		TAPI_COMMODITY_TYPE_BUL				= 'U';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_BUL					= 'U';
 //! 看跌垂直套利
-const TAPICommodityType		TAPI_COMMODITY_TYPE_BER				= 'E';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_BER					= 'E';
 //! 跨式套利
-const TAPICommodityType		TAPI_COMMODITY_TYPE_STD				= 'D';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_STD					= 'D';
 //! 宽跨式套利
-const TAPICommodityType		TAPI_COMMODITY_TYPE_STG				= 'G';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_STG					= 'G';
 //! 备兑组合
-const TAPICommodityType		TAPI_COMMODITY_TYPE_PRT				= 'R';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_PRT					= 'R';
 //! 外汇——直接汇率
-const TAPICommodityType		TAPI_COMMODITY_TYPE_DIRECTFOREX		= 'X';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_DIRECTFOREX			= 'X';
 //! 外汇——间接汇率
-const TAPICommodityType		TAPI_COMMODITY_TYPE_INDIRECTFOREX	= 'I';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_INDIRECTFOREX		= 'I';
 //! 外汇——交叉汇率
-const TAPICommodityType		TAPI_COMMODITY_TYPE_CROSSFOREX		= 'C';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_CROSSFOREX			= 'C';
 //! 指数
-const TAPICommodityType		TAPI_COMMODITY_TYPE_INDEX			= 'Z';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_INDEX				= 'Z';
 //! 股票
-const TAPICommodityType		TAPI_COMMODITY_TYPE_STOCK			= 'T';
+const TAPICommodityType		TAPI_COMMODITY_TYPE_STOCK				= 'T';
 
 /** @}*/
 
@@ -216,11 +216,11 @@ struct TapAPIExchangeInfo
 	TAPISTR_20				ExchangeName;							///< 交易所名称
 };
 
-
+//! 修改密码请求
 struct TapAPIChangePasswordReq
 {
-	TAPISTR_20				OldPassword;
-	TAPISTR_20				NewPassword;
+	TAPISTR_20				OldPassword;							///< 旧密码
+	TAPISTR_20				NewPassword;							///< 新密码
 };
 
 #pragma pack(pop)

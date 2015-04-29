@@ -699,7 +699,35 @@ void SwigDirector_ITapTradeAPINotify::OnRspQryDeepQuote(TAPIUINT32 sessionID, TA
   }
 }
 
-void SwigDirector_ITapTradeAPINotify::swig_connect_director(SWIG_Callback0_t callbackOnConnect, SWIG_Callback1_t callbackOnRspLogin, SWIG_Callback2_t callbackOnAPIReady, SWIG_Callback3_t callbackOnDisconnect, SWIG_Callback4_t callbackOnRspChangePassword, SWIG_Callback5_t callbackOnRspSetReservedInfo, SWIG_Callback6_t callbackOnRspQryAccount, SWIG_Callback7_t callbackOnRspQryFund, SWIG_Callback8_t callbackOnRtnFund, SWIG_Callback9_t callbackOnRspQryExchange, SWIG_Callback10_t callbackOnRspQryCommodity, SWIG_Callback11_t callbackOnRspQryContract, SWIG_Callback12_t callbackOnRtnContract, SWIG_Callback13_t callbackOnRtnOrder, SWIG_Callback14_t callbackOnRspOrderAction, SWIG_Callback15_t callbackOnRspQryOrder, SWIG_Callback16_t callbackOnRspQryOrderProcess, SWIG_Callback17_t callbackOnRspQryFill, SWIG_Callback18_t callbackOnRtnFill, SWIG_Callback19_t callbackOnRspQryPosition, SWIG_Callback20_t callbackOnRtnPosition, SWIG_Callback21_t callbackOnRspQryClose, SWIG_Callback22_t callbackOnRtnClose, SWIG_Callback23_t callbackOnRtnPositionProfit, SWIG_Callback24_t callbackOnRspQryDeepQuote) {
+void SwigDirector_ITapTradeAPINotify::OnRspQryExchangeStateInfo(TAPIUINT32 sessionID, TAPIINT32 errorCode, TAPIYNFLAG isLast, TapAPIExchangeStateInfo const *info) {
+  unsigned int jsessionID  ;
+  int jerrorCode  ;
+  char jisLast  ;
+  void * jinfo = 0 ;
+  
+  if (!swig_callbackOnRspQryExchangeStateInfo) {
+    throw Swig::DirectorPureVirtualException("ITapTradeAPINotify::OnRspQryExchangeStateInfo");
+  } else {
+    jsessionID = sessionID;
+    jerrorCode = errorCode;
+    jisLast = isLast;
+    jinfo = (void *) info; 
+    swig_callbackOnRspQryExchangeStateInfo(jsessionID, jerrorCode, jisLast, jinfo);
+  }
+}
+
+void SwigDirector_ITapTradeAPINotify::OnRtnExchangeStateInfo(TapAPIExchangeStateInfoNotice const *info) {
+  void * jinfo = 0 ;
+  
+  if (!swig_callbackOnRtnExchangeStateInfo) {
+    throw Swig::DirectorPureVirtualException("ITapTradeAPINotify::OnRtnExchangeStateInfo");
+  } else {
+    jinfo = (void *) info; 
+    swig_callbackOnRtnExchangeStateInfo(jinfo);
+  }
+}
+
+void SwigDirector_ITapTradeAPINotify::swig_connect_director(SWIG_Callback0_t callbackOnConnect, SWIG_Callback1_t callbackOnRspLogin, SWIG_Callback2_t callbackOnAPIReady, SWIG_Callback3_t callbackOnDisconnect, SWIG_Callback4_t callbackOnRspChangePassword, SWIG_Callback5_t callbackOnRspSetReservedInfo, SWIG_Callback6_t callbackOnRspQryAccount, SWIG_Callback7_t callbackOnRspQryFund, SWIG_Callback8_t callbackOnRtnFund, SWIG_Callback9_t callbackOnRspQryExchange, SWIG_Callback10_t callbackOnRspQryCommodity, SWIG_Callback11_t callbackOnRspQryContract, SWIG_Callback12_t callbackOnRtnContract, SWIG_Callback13_t callbackOnRtnOrder, SWIG_Callback14_t callbackOnRspOrderAction, SWIG_Callback15_t callbackOnRspQryOrder, SWIG_Callback16_t callbackOnRspQryOrderProcess, SWIG_Callback17_t callbackOnRspQryFill, SWIG_Callback18_t callbackOnRtnFill, SWIG_Callback19_t callbackOnRspQryPosition, SWIG_Callback20_t callbackOnRtnPosition, SWIG_Callback21_t callbackOnRspQryClose, SWIG_Callback22_t callbackOnRtnClose, SWIG_Callback23_t callbackOnRtnPositionProfit, SWIG_Callback24_t callbackOnRspQryDeepQuote, SWIG_Callback25_t callbackOnRspQryExchangeStateInfo, SWIG_Callback26_t callbackOnRtnExchangeStateInfo) {
   swig_callbackOnConnect = callbackOnConnect;
   swig_callbackOnRspLogin = callbackOnRspLogin;
   swig_callbackOnAPIReady = callbackOnAPIReady;
@@ -725,6 +753,8 @@ void SwigDirector_ITapTradeAPINotify::swig_connect_director(SWIG_Callback0_t cal
   swig_callbackOnRtnClose = callbackOnRtnClose;
   swig_callbackOnRtnPositionProfit = callbackOnRtnPositionProfit;
   swig_callbackOnRspQryDeepQuote = callbackOnRspQryDeepQuote;
+  swig_callbackOnRspQryExchangeStateInfo = callbackOnRspQryExchangeStateInfo;
+  swig_callbackOnRtnExchangeStateInfo = callbackOnRtnExchangeStateInfo;
 }
 
 void SwigDirector_ITapTradeAPINotify::swig_init_callbacks() {
@@ -753,6 +783,8 @@ void SwigDirector_ITapTradeAPINotify::swig_init_callbacks() {
   swig_callbackOnRtnClose = 0;
   swig_callbackOnRtnPositionProfit = 0;
   swig_callbackOnRspQryDeepQuote = 0;
+  swig_callbackOnRspQryExchangeStateInfo = 0;
+  swig_callbackOnRtnExchangeStateInfo = 0;
 }
 
 
@@ -955,6 +987,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_UDP_LISTENING_get() {
   int result;
   
   result = (int)(int)TAPIERROR_UDP_LISTENING;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_NotImplemented_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_NotImplemented;
   jresult = result; 
   return jresult;
 }
@@ -1450,6 +1492,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType_
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_INPUTERROR_TAPITradingStateType_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_INPUTERROR_TAPITradingStateType;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_INPUTERROR_TAPIMarketLevelType_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_INPUTERROR_TAPIMarketLevelType;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_INPUTERROR_QryHisQuoteParam_get() {
   int jresult ;
   int result;
@@ -1725,6 +1787,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_USERINFO_DEL_get() {
   int result;
   
   result = (int)(int)TAPIERROR_USERINFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTNO_IN_USERINFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTNO_IN_USERINFO_DEL;
   jresult = result; 
   return jresult;
 }
@@ -2095,6 +2167,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_GROUPACCOUNT_DEL_get() {
   int result;
   
   result = (int)(int)TAPIERROR_GROUPACCOUNT_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_GROUPACCOUNT_ONETOONE_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_GROUPACCOUNT_ONETOONE;
   jresult = result; 
   return jresult;
 }
@@ -2550,6 +2632,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDERINSERT_CLOSEMODE_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SWAP_CONTRACT_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SWAP_CONTRACT;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_USERNO_NOTHAS_ACCOUNT_get() {
   int jresult ;
   int result;
@@ -2680,6 +2782,56 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDER_NO_PERMIT_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_RSPQUOTE_NO_PERMIT_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_RSPQUOTE_NO_PERMIT;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TRADENO_NOT_FIND_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TRADENO_NOT_FIND;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDER_NO_CLOSE_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ORDER_NO_CLOSE;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_QRY_QUOTE_NO_PERMIT_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_QRY_QUOTE_NO_PERMIT;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_CURRENCYINFO_QRY_get() {
   int jresult ;
   int result;
@@ -2795,6 +2947,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTINFO_MOD_get() {
   int result;
   
   result = (int)(int)TAPIERROR_ACCOUNTINFO_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ALLACCOUNTINFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ALLACCOUNTINFO_QRY;
   jresult = result; 
   return jresult;
 }
@@ -5080,6 +5242,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ATTRIBUTELEVELINFO_MOD_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ATTRIBUTELEVELINFO_CASCADE_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ATTRIBUTELEVELINFO_CASCADE_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_CALENDARTEMPLATEINFO_QRY_get() {
   int jresult ;
   int result;
@@ -6310,6 +6482,326 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_MINMAX_FEETEMPLATE_MOD_get()
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_SEAT_INFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_SEAT_INFO_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_SEAT_INFO_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_SEAT_INFO_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_SEAT_INFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_SEAT_INFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SEAT_INFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SEAT_INFO_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SEAT_INFO_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SEAT_INFO_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SEAT_INFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SEAT_INFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SEAT_INFO_MAIN_EXIT_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SEAT_INFO_MAIN_EXIT_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTFEE_PARAMETER_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTFEE_PARAMETER_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTMARGIN_PARAMETER_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTMARGIN_PARAMETER_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TEMPLATEFEE_BATCH_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TEMPLATEFEE_BATCH_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TEMPLATEMARGIN_BATCH_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TEMPLATEMARGIN_BATCH_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGN_EXCHANGE_NEWRATE_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGN_EXCHANGE_NEWRATE_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGN_EXCHANGE_CURRATE_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGN_EXCHANGE_CURRATE_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGN_EXCHANGE_RATE_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGN_EXCHANGE_RATE_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGN_EXCHANGE_RATE_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGN_EXCHANGE_RATE_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGN_EXCHANGE_RATE_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGN_EXCHANGE_RATE_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_MAIL_INFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_MAIL_INFO_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_MAIL_INFO_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_MAIL_INFO_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_MAIL_INFO_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_MAIL_INFO_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_MAIL_INFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_MAIL_INFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_RATE_INFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_RATE_INFO_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_RATE_INFO_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_RATE_INFO_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_RATE_INFO_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_RATE_INFO_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_RATE_INFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_RATE_INFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_HOLIDAY_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_HOLIDAY_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_HOLIDAY_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_HOLIDAY_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_HOLIDAY_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_HOLIDAY_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_HOLIDAY_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_HOLIDAY_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_RELATEINFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_RELATEINFO_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_RELATEINFO_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_RELATEINFO_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_RELATEINFO_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_RELATEINFO_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_RELATEINFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_RELATEINFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_HISORDER_QRY_get() {
   int jresult ;
   int result;
@@ -6350,6 +6842,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_HISORDER_DEL_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDERFORTRADE_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ORDERFORTRADE_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_HISMATCH_QRY_get() {
   int jresult ;
   int result;
@@ -6385,6 +6887,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_HISMATCH_DEL_get() {
   int result;
   
   result = (int)(int)TAPIERROR_HISMATCH_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_MATCHFORTRADE_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_MATCHFORTRADE_QRY;
   jresult = result; 
   return jresult;
 }
@@ -7440,6 +7952,306 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTAUTHCASH_DEL_REQ_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGNPOSITION_CHECK_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGNPOSITION_CHECK_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTFUND_CHECK_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTFUND_CHECK_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_UNEXPCLOSE_CHECK_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_UNEXPCLOSE_CHECK_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OTHERFUND_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OTHERFUND_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OTHERFUND_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OTHERFUND_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OTHERFUND_MOD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OTHERFUND_MOD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OTHERFUND_DEL_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OTHERFUND_DEL_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTFUND_NOTICE_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTFUND_NOTICE_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_POSITIONMOVEBYACCOUNT_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_POSITIONMOVEBYACCOUNT_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_MOD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_POSITIONMOVEBYACCOUNT_MOD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_DEL_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_POSITIONMOVEBYACCOUNT_DEL_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ADJUSTMATCH_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ADJUSTMATCH_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SWAPREPORT_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SWAPREPORT_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ADDFOURCEREPORT_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ADDFOURCEREPORT_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTFUNDREPORT_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTFUNDREPORT_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_DELIVERYALARMREPORT_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_DELIVERYALARMREPORT_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OHCL_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OHCL_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OHCL_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OHCL_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OHCL_MOD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OHCL_MOD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OHCL_DEL_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OHCL_DEL_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TODELIVERY_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TODELIVERY_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TODELIVERY_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TODELIVERY_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TODELIVERY_MOD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TODELIVERY_MOD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TODELIVERY_DEL_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TODELIVERY_DEL_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTPLEDGE_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTPLEDGE_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTPLEDGE_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTPLEDGE_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SETTLESALE_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SETTLESALE_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SETTLESALE_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SETTLESALE_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SETTLESALE_DEL_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SETTLESALE_DEL_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDER_FREQUENCY_get() {
   int jresult ;
   int result;
@@ -8390,6 +9202,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TRADEFRONT_NODATA_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TRADEFRONT_DICONNECT_SMTRADE_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TRADEFRONT_DICONNECT_SMTRADE;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TRADEFRONT_DICONNECT_TRADE_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TRADEFRONT_DICONNECT_TRADE;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL_get() {
   int jresult ;
   int result;
@@ -8585,6 +9417,46 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_CASHIN_NOREVERSE_get() {
   int result;
   
   result = (int)(int)TAPIERROR_CASHIN_NOREVERSE;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_RISKCOMMODITY_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_RISKCOMMODITY_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_RISKCONTRACT_FUND_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_RISKCONTRACT_FUND;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_RISKFUND_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_RISKFUND_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_CONTRACTQUOTE_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_CONTRACTQUOTE_ADD;
   jresult = result; 
   return jresult;
 }
@@ -9496,6 +10368,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPI_RIGHT_ONLY_QRY_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPI_RIGHT_ONLY_OPEN_get() {
+  int jresult ;
+  TAPIRightIDType result;
+  
+  result = (TAPIRightIDType)(TAPIRightIDType)TAPI_RIGHT_ONLY_OPEN;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPI_RIGHT_SHFE_QUOTE_get() {
+  int jresult ;
+  TAPIRightIDType result;
+  
+  result = (TAPIRightIDType)(TAPIRightIDType)TAPI_RIGHT_SHFE_QUOTE;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPI_USERTYPE_CLIENT_get() {
   int jresult ;
   TAPIUserTypeType result;
@@ -9756,6 +10648,46 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_ORDER_SOURCE_PROGRAM_get() {
 }
 
 
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_ORDER_SOURCE_DELIVERY_get() {
+  char jresult ;
+  TAPIOrderSourceType result;
+  
+  result = (TAPIOrderSourceType)(TAPIOrderSourceType)TAPI_ORDER_SOURCE_DELIVERY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_ORDER_SOURCE_ABANDON_get() {
+  char jresult ;
+  TAPIOrderSourceType result;
+  
+  result = (TAPIOrderSourceType)(TAPIOrderSourceType)TAPI_ORDER_SOURCE_ABANDON;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_ORDER_SOURCE_CHANNEL_get() {
+  char jresult ;
+  TAPIOrderSourceType result;
+  
+  result = (TAPIOrderSourceType)(TAPIOrderSourceType)TAPI_ORDER_SOURCE_CHANNEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_ORDER_SOURCE_ESUNNY_API_get() {
+  char jresult ;
+  TAPIOrderSourceType result;
+  
+  result = (TAPIOrderSourceType)(TAPIOrderSourceType)TAPI_ORDER_SOURCE_ESUNNY_API;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_ORDER_TIMEINFORCE_GFD_get() {
   char jresult ;
   TAPITimeInForceType result;
@@ -9901,6 +10833,16 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_HEDGEFLAG_B_get() {
   TAPIHedgeFlagType result;
   
   result = (TAPIHedgeFlagType)(TAPIHedgeFlagType)TAPI_HEDGEFLAG_B;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_HEDGEFLAG_L_get() {
+  char jresult ;
+  TAPIHedgeFlagType result;
+  
+  result = (TAPIHedgeFlagType)(TAPIHedgeFlagType)TAPI_HEDGEFLAG_L;
   jresult = result; 
   return jresult;
 }
@@ -10221,6 +11163,16 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_MATCH_SOURCE_CHANNEL_get() {
   TAPIMatchSourceType result;
   
   result = (TAPIMatchSourceType)(TAPIMatchSourceType)TAPI_MATCH_SOURCE_CHANNEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_MATCH_SOURCE_ESUNNY_API_get() {
+  char jresult ;
+  TAPIMatchSourceType result;
+  
+  result = (TAPIMatchSourceType)(TAPIMatchSourceType)TAPI_MATCH_SOURCE_ESUNNY_API;
   jresult = result; 
   return jresult;
 }
@@ -10601,6 +11553,146 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_TRIGGER_PRICE_LAST_get() {
   TAPITriggerPriceTypeType result;
   
   result = (TAPITriggerPriceTypeType)(TAPITriggerPriceTypeType)TAPI_TRIGGER_PRICE_LAST;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned char SWIGSTDCALL CSharp_TAPI_MARKET_LEVEL_0_get() {
+  unsigned char jresult ;
+  TAPIMarketLevelType result;
+  
+  result = (TAPIMarketLevelType)(TAPIMarketLevelType)TAPI_MARKET_LEVEL_0;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned char SWIGSTDCALL CSharp_TAPI_MARKET_LEVEL_1_get() {
+  unsigned char jresult ;
+  TAPIMarketLevelType result;
+  
+  result = (TAPIMarketLevelType)(TAPIMarketLevelType)TAPI_MARKET_LEVEL_1;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned char SWIGSTDCALL CSharp_TAPI_MARKET_LEVEL_5_get() {
+  unsigned char jresult ;
+  TAPIMarketLevelType result;
+  
+  result = (TAPIMarketLevelType)(TAPIMarketLevelType)TAPI_MARKET_LEVEL_5;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT unsigned char SWIGSTDCALL CSharp_TAPI_MARKET_LEVEL_10_get() {
+  unsigned char jresult ;
+  TAPIMarketLevelType result;
+  
+  result = (TAPIMarketLevelType)(TAPIMarketLevelType)TAPI_MARKET_LEVEL_10;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_TRADE_STATE_BID_get() {
+  char jresult ;
+  TAPITradingStateType result;
+  
+  result = (TAPITradingStateType)(TAPITradingStateType)TAPI_TRADE_STATE_BID;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_TRADE_STATE_MATCH_get() {
+  char jresult ;
+  TAPITradingStateType result;
+  
+  result = (TAPITradingStateType)(TAPITradingStateType)TAPI_TRADE_STATE_MATCH;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_TRADE_STATE_CONTINUOUS_get() {
+  char jresult ;
+  TAPITradingStateType result;
+  
+  result = (TAPITradingStateType)(TAPITradingStateType)TAPI_TRADE_STATE_CONTINUOUS;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_TRADE_STATE_PAUSED_get() {
+  char jresult ;
+  TAPITradingStateType result;
+  
+  result = (TAPITradingStateType)(TAPITradingStateType)TAPI_TRADE_STATE_PAUSED;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_TRADE_STATE_CLOSE_get() {
+  char jresult ;
+  TAPITradingStateType result;
+  
+  result = (TAPITradingStateType)(TAPITradingStateType)TAPI_TRADE_STATE_CLOSE;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_TRADE_STATE_DEALLAST_get() {
+  char jresult ;
+  TAPITradingStateType result;
+  
+  result = (TAPITradingStateType)(TAPITradingStateType)TAPI_TRADE_STATE_DEALLAST;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_TRADE_STATE_GWDISCONNECT_get() {
+  char jresult ;
+  TAPITradingStateType result;
+  
+  result = (TAPITradingStateType)(TAPITradingStateType)TAPI_TRADE_STATE_GWDISCONNECT;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_TRADE_STATE_UNKNOWN_get() {
+  char jresult ;
+  TAPITradingStateType result;
+  
+  result = (TAPITradingStateType)(TAPITradingStateType)TAPI_TRADE_STATE_UNKNOWN;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_TRADE_STATE_INITIALIZE_get() {
+  char jresult ;
+  TAPITradingStateType result;
+  
+  result = (TAPITradingStateType)(TAPITradingStateType)TAPI_TRADE_STATE_INITIALIZE;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TAPI_TRADE_STATE_READY_get() {
+  char jresult ;
+  TAPITradingStateType result;
+  
+  result = (TAPITradingStateType)(TAPITradingStateType)TAPI_TRADE_STATE_READY;
   jresult = result; 
   return jresult;
 }
@@ -12253,6 +13345,72 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapAPINewOrder_AddOneIsValid_get(void * jarg1
   
   arg1 = (TapAPINewOrder *)jarg1; 
   result = (TAPIYNFLAG) ((arg1)->AddOneIsValid);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPINewOrder_OrderQty2_set(void * jarg1, unsigned int jarg2) {
+  TapAPINewOrder *arg1 = (TapAPINewOrder *) 0 ;
+  TAPIUINT32 arg2 ;
+  
+  arg1 = (TapAPINewOrder *)jarg1; 
+  arg2 = (TAPIUINT32)jarg2; 
+  if (arg1) (arg1)->OrderQty2 = arg2;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapAPINewOrder_OrderQty2_get(void * jarg1) {
+  unsigned int jresult ;
+  TapAPINewOrder *arg1 = (TapAPINewOrder *) 0 ;
+  TAPIUINT32 result;
+  
+  arg1 = (TapAPINewOrder *)jarg1; 
+  result = (TAPIUINT32) ((arg1)->OrderQty2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPINewOrder_HedgeFlag2_set(void * jarg1, char jarg2) {
+  TapAPINewOrder *arg1 = (TapAPINewOrder *) 0 ;
+  TAPIHedgeFlagType arg2 ;
+  
+  arg1 = (TapAPINewOrder *)jarg1; 
+  arg2 = (TAPIHedgeFlagType)jarg2; 
+  if (arg1) (arg1)->HedgeFlag2 = arg2;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TapAPINewOrder_HedgeFlag2_get(void * jarg1) {
+  char jresult ;
+  TapAPINewOrder *arg1 = (TapAPINewOrder *) 0 ;
+  TAPIHedgeFlagType result;
+  
+  arg1 = (TapAPINewOrder *)jarg1; 
+  result = (TAPIHedgeFlagType) ((arg1)->HedgeFlag2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPINewOrder_MarketLevel_set(void * jarg1, unsigned char jarg2) {
+  TapAPINewOrder *arg1 = (TapAPINewOrder *) 0 ;
+  TAPIMarketLevelType arg2 ;
+  
+  arg1 = (TapAPINewOrder *)jarg1; 
+  arg2 = (TAPIMarketLevelType)jarg2; 
+  if (arg1) (arg1)->MarketLevel = arg2;
+}
+
+
+SWIGEXPORT unsigned char SWIGSTDCALL CSharp_TapAPINewOrder_MarketLevel_get(void * jarg1) {
+  unsigned char jresult ;
+  TapAPINewOrder *arg1 = (TapAPINewOrder *) 0 ;
+  TAPIMarketLevelType result;
+  
+  arg1 = (TapAPINewOrder *)jarg1; 
+  result = (TAPIMarketLevelType) ((arg1)->MarketLevel);
   jresult = result; 
   return jresult;
 }
@@ -14740,6 +15898,72 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapAPIOrderInfo_AddOneIsValid_get(void * jarg
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIOrderInfo_OrderQty2_set(void * jarg1, unsigned int jarg2) {
+  TapAPIOrderInfo *arg1 = (TapAPIOrderInfo *) 0 ;
+  TAPIUINT32 arg2 ;
+  
+  arg1 = (TapAPIOrderInfo *)jarg1; 
+  arg2 = (TAPIUINT32)jarg2; 
+  if (arg1) (arg1)->OrderQty2 = arg2;
+}
+
+
+SWIGEXPORT unsigned int SWIGSTDCALL CSharp_TapAPIOrderInfo_OrderQty2_get(void * jarg1) {
+  unsigned int jresult ;
+  TapAPIOrderInfo *arg1 = (TapAPIOrderInfo *) 0 ;
+  TAPIUINT32 result;
+  
+  arg1 = (TapAPIOrderInfo *)jarg1; 
+  result = (TAPIUINT32) ((arg1)->OrderQty2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIOrderInfo_HedgeFlag2_set(void * jarg1, char jarg2) {
+  TapAPIOrderInfo *arg1 = (TapAPIOrderInfo *) 0 ;
+  TAPIHedgeFlagType arg2 ;
+  
+  arg1 = (TapAPIOrderInfo *)jarg1; 
+  arg2 = (TAPIHedgeFlagType)jarg2; 
+  if (arg1) (arg1)->HedgeFlag2 = arg2;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TapAPIOrderInfo_HedgeFlag2_get(void * jarg1) {
+  char jresult ;
+  TapAPIOrderInfo *arg1 = (TapAPIOrderInfo *) 0 ;
+  TAPIHedgeFlagType result;
+  
+  arg1 = (TapAPIOrderInfo *)jarg1; 
+  result = (TAPIHedgeFlagType) ((arg1)->HedgeFlag2);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIOrderInfo_MarketLevel_set(void * jarg1, unsigned char jarg2) {
+  TapAPIOrderInfo *arg1 = (TapAPIOrderInfo *) 0 ;
+  TAPIMarketLevelType arg2 ;
+  
+  arg1 = (TapAPIOrderInfo *)jarg1; 
+  arg2 = (TAPIMarketLevelType)jarg2; 
+  if (arg1) (arg1)->MarketLevel = arg2;
+}
+
+
+SWIGEXPORT unsigned char SWIGSTDCALL CSharp_TapAPIOrderInfo_MarketLevel_get(void * jarg1) {
+  unsigned char jresult ;
+  TapAPIOrderInfo *arg1 = (TapAPIOrderInfo *) 0 ;
+  TAPIMarketLevelType result;
+  
+  arg1 = (TapAPIOrderInfo *)jarg1; 
+  result = (TAPIMarketLevelType) ((arg1)->MarketLevel);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_TapAPIOrderInfo__SWIG_0() {
   void * jresult ;
   TapAPIOrderInfo *result = 0 ;
@@ -16925,6 +18149,28 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFillInfo_QuotePrice_get(void * jarg1)
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFillInfo_ClosePL_set(void * jarg1, double jarg2) {
+  TapAPIFillInfo *arg1 = (TapAPIFillInfo *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFillInfo *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->ClosePL = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFillInfo_ClosePL_get(void * jarg1) {
+  double jresult ;
+  TapAPIFillInfo *arg1 = (TapAPIFillInfo *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFillInfo *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->ClosePL);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_TapAPIFillInfo__SWIG_0() {
   void * jresult ;
   TapAPIFillInfo *result = 0 ;
@@ -18524,6 +19770,28 @@ SWIGEXPORT char SWIGSTDCALL CSharp_TapAPIPositionInfo_IsHistory_get(void * jarg1
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIPositionInfo_FloatingPL_set(void * jarg1, double jarg2) {
+  TapAPIPositionInfo *arg1 = (TapAPIPositionInfo *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIPositionInfo *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->FloatingPL = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIPositionInfo_FloatingPL_get(void * jarg1) {
+  double jresult ;
+  TapAPIPositionInfo *arg1 = (TapAPIPositionInfo *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIPositionInfo *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->FloatingPL);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_TapAPIPositionInfo__SWIG_0() {
   void * jresult ;
   TapAPIPositionInfo *result = 0 ;
@@ -18692,6 +19960,28 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIPositionProfit_CalculatePrice_get(voi
   
   arg1 = (TapAPIPositionProfit *)jarg1; 
   result = (TAPIREAL64) ((arg1)->CalculatePrice);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIPositionProfit_FloatingPL_set(void * jarg1, double jarg2) {
+  TapAPIPositionProfit *arg1 = (TapAPIPositionProfit *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIPositionProfit *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->FloatingPL = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIPositionProfit_FloatingPL_get(void * jarg1) {
+  double jresult ;
+  TapAPIPositionProfit *arg1 = (TapAPIPositionProfit *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIPositionProfit *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->FloatingPL);
   jresult = result; 
   return jresult;
 }
@@ -19829,6 +21119,28 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapAPICloseInfo_UnExpProfit_get(void * jarg
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPICloseInfo_ClosePL_set(void * jarg1, double jarg2) {
+  TapAPICloseInfo *arg1 = (TapAPICloseInfo *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPICloseInfo *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->ClosePL = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPICloseInfo_ClosePL_get(void * jarg1) {
+  double jresult ;
+  TapAPICloseInfo *arg1 = (TapAPICloseInfo *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPICloseInfo *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->ClosePL);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_TapAPICloseInfo__SWIG_0() {
   void * jresult ;
   TapAPICloseInfo *result = 0 ;
@@ -20873,6 +22185,380 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_OriginalCashInOut_get(void *
   
   arg1 = (TapAPIFundData *)jarg1; 
   result = (TAPIREAL64) ((arg1)->OriginalCashInOut);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_FloatingPL_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->FloatingPL = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_FloatingPL_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->FloatingPL);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_FrozenRiskFundValue_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->FrozenRiskFundValue = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_FrozenRiskFundValue_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->FrozenRiskFundValue);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_ClosePL_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->ClosePL = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_ClosePL_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->ClosePL);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_NoCurrencyPledgeValue_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->NoCurrencyPledgeValue = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_NoCurrencyPledgeValue_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->NoCurrencyPledgeValue);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_PrePledgeValue_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->PrePledgeValue = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_PrePledgeValue_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->PrePledgeValue);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_PledgeIn_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->PledgeIn = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_PledgeIn_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->PledgeIn);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_PledgeOut_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->PledgeOut = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_PledgeOut_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->PledgeOut);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_PledgeValue_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->PledgeValue = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_PledgeValue_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->PledgeValue);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_BorrowValue_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->BorrowValue = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_BorrowValue_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->BorrowValue);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_SpecialAccountFrozenMargin_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->SpecialAccountFrozenMargin = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_SpecialAccountFrozenMargin_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->SpecialAccountFrozenMargin);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_SpecialAccountMargin_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->SpecialAccountMargin = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_SpecialAccountMargin_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->SpecialAccountMargin);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_SpecialAccountFrozenFee_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->SpecialAccountFrozenFee = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_SpecialAccountFrozenFee_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->SpecialAccountFrozenFee);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_SpecialAccountFee_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->SpecialAccountFee = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_SpecialAccountFee_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->SpecialAccountFee);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_SpecialFloatProfit_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->SpecialFloatProfit = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_SpecialFloatProfit_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->SpecialFloatProfit);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_SpecialCloseProfit_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->SpecialCloseProfit = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_SpecialCloseProfit_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->SpecialCloseProfit);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_SpecialFloatPL_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->SpecialFloatPL = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_SpecialFloatPL_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->SpecialFloatPL);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIFundData_SpecialClosePL_set(void * jarg1, double jarg2) {
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 arg2 ;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  arg2 = (TAPIREAL64)jarg2; 
+  if (arg1) (arg1)->SpecialClosePL = arg2;
+}
+
+
+SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIFundData_SpecialClosePL_get(void * jarg1) {
+  double jresult ;
+  TapAPIFundData *arg1 = (TapAPIFundData *) 0 ;
+  TAPIREAL64 result;
+  
+  arg1 = (TapAPIFundData *)jarg1; 
+  result = (TAPIREAL64) ((arg1)->SpecialClosePL);
   jresult = result; 
   return jresult;
 }
@@ -22265,6 +23951,312 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_TapAPIDeepQuoteQryRsp(void * jarg1) {
 }
 
 
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_TapAPIExchangeStateInfoQryReq__SWIG_0() {
+  void * jresult ;
+  TapAPIExchangeStateInfoQryReq *result = 0 ;
+  
+  result = (TapAPIExchangeStateInfoQryReq *)new TapAPIExchangeStateInfoQryReq();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_TapAPIExchangeStateInfoQryReq__SWIG_1(void * jarg1) {
+  void * jresult ;
+  TapAPIExchangeStateInfoQryReq *arg1 = 0 ;
+  TapAPIExchangeStateInfoQryReq *result = 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfoQryReq *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "TapAPIExchangeStateInfoQryReq const & type is null", 0);
+    return 0;
+  } 
+  result = (TapAPIExchangeStateInfoQryReq *)new TapAPIExchangeStateInfoQryReq((TapAPIExchangeStateInfoQryReq const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_TapAPIExchangeStateInfoQryReq(void * jarg1) {
+  TapAPIExchangeStateInfoQryReq *arg1 = (TapAPIExchangeStateInfoQryReq *) 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfoQryReq *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_UpperChannelNo_set(void * jarg1, char * jarg2) {
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  char *arg2 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  arg2 = (char *)jarg2; 
+  {
+    if(arg2) {
+      strncpy((char*)arg1->UpperChannelNo, (const char *)arg2, 11-1);
+      arg1->UpperChannelNo[11-1] = 0;
+    } else {
+      arg1->UpperChannelNo[0] = 0;
+    }
+  }
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_UpperChannelNo_get(void * jarg1) {
+  char * jresult ;
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  result = (char *) ((arg1)->UpperChannelNo);
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_ExchangeNo_set(void * jarg1, char * jarg2) {
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  char *arg2 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  arg2 = (char *)jarg2; 
+  {
+    if(arg2) {
+      strncpy((char*)arg1->ExchangeNo, (const char *)arg2, 11-1);
+      arg1->ExchangeNo[11-1] = 0;
+    } else {
+      arg1->ExchangeNo[0] = 0;
+    }
+  }
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_ExchangeNo_get(void * jarg1) {
+  char * jresult ;
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  result = (char *) ((arg1)->ExchangeNo);
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_CommodityType_set(void * jarg1, char jarg2) {
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  TAPICommodityType arg2 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  arg2 = (TAPICommodityType)jarg2; 
+  if (arg1) (arg1)->CommodityType = arg2;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_CommodityType_get(void * jarg1) {
+  char jresult ;
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  TAPICommodityType result;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  result = (TAPICommodityType) ((arg1)->CommodityType);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_CommodityNo_set(void * jarg1, char * jarg2) {
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  char *arg2 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  arg2 = (char *)jarg2; 
+  {
+    if(arg2) {
+      strncpy((char*)arg1->CommodityNo, (const char *)arg2, 11-1);
+      arg1->CommodityNo[11-1] = 0;
+    } else {
+      arg1->CommodityNo[0] = 0;
+    }
+  }
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_CommodityNo_get(void * jarg1) {
+  char * jresult ;
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  result = (char *) ((arg1)->CommodityNo);
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_ExchangeTime_set(void * jarg1, char * jarg2) {
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  char *arg2 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  arg2 = (char *)jarg2; 
+  {
+    if(arg2) {
+      strncpy((char*)arg1->ExchangeTime, (const char *)arg2, 20-1);
+      arg1->ExchangeTime[20-1] = 0;
+    } else {
+      arg1->ExchangeTime[0] = 0;
+    }
+  }
+}
+
+
+SWIGEXPORT char * SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_ExchangeTime_get(void * jarg1) {
+  char * jresult ;
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  result = (char *) ((arg1)->ExchangeTime);
+  jresult = SWIG_csharp_string_callback((const char *)result); 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_TradingState_set(void * jarg1, char jarg2) {
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  TAPITradingStateType arg2 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  arg2 = (TAPITradingStateType)jarg2; 
+  if (arg1) (arg1)->TradingState = arg2;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TapAPIExchangeStateInfo_TradingState_get(void * jarg1) {
+  char jresult ;
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  TAPITradingStateType result;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  result = (TAPITradingStateType) ((arg1)->TradingState);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_TapAPIExchangeStateInfo__SWIG_0() {
+  void * jresult ;
+  TapAPIExchangeStateInfo *result = 0 ;
+  
+  result = (TapAPIExchangeStateInfo *)new TapAPIExchangeStateInfo();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_TapAPIExchangeStateInfo__SWIG_1(void * jarg1) {
+  void * jresult ;
+  TapAPIExchangeStateInfo *arg1 = 0 ;
+  TapAPIExchangeStateInfo *result = 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "TapAPIExchangeStateInfo const & type is null", 0);
+    return 0;
+  } 
+  result = (TapAPIExchangeStateInfo *)new TapAPIExchangeStateInfo((TapAPIExchangeStateInfo const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_TapAPIExchangeStateInfo(void * jarg1) {
+  TapAPIExchangeStateInfo *arg1 = (TapAPIExchangeStateInfo *) 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfo *)jarg1; 
+  delete arg1;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIExchangeStateInfoNotice_IsLast_set(void * jarg1, char jarg2) {
+  TapAPIExchangeStateInfoNotice *arg1 = (TapAPIExchangeStateInfoNotice *) 0 ;
+  TAPIYNFLAG arg2 ;
+  
+  arg1 = (TapAPIExchangeStateInfoNotice *)jarg1; 
+  arg2 = (TAPIYNFLAG)jarg2; 
+  if (arg1) (arg1)->IsLast = arg2;
+}
+
+
+SWIGEXPORT char SWIGSTDCALL CSharp_TapAPIExchangeStateInfoNotice_IsLast_get(void * jarg1) {
+  char jresult ;
+  TapAPIExchangeStateInfoNotice *arg1 = (TapAPIExchangeStateInfoNotice *) 0 ;
+  TAPIYNFLAG result;
+  
+  arg1 = (TapAPIExchangeStateInfoNotice *)jarg1; 
+  result = (TAPIYNFLAG) ((arg1)->IsLast);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIExchangeStateInfoNotice_ExchangeStateInfo_set(void * jarg1, void * jarg2) {
+  TapAPIExchangeStateInfoNotice *arg1 = (TapAPIExchangeStateInfoNotice *) 0 ;
+  TapAPIExchangeStateInfo *arg2 = (TapAPIExchangeStateInfo *) 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfoNotice *)jarg1; 
+  arg2 = (TapAPIExchangeStateInfo *)jarg2; 
+  if (arg1) (arg1)->ExchangeStateInfo = *arg2;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_TapAPIExchangeStateInfoNotice_ExchangeStateInfo_get(void * jarg1) {
+  void * jresult ;
+  TapAPIExchangeStateInfoNotice *arg1 = (TapAPIExchangeStateInfoNotice *) 0 ;
+  TapAPIExchangeStateInfo *result = 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfoNotice *)jarg1; 
+  result = (TapAPIExchangeStateInfo *)& ((arg1)->ExchangeStateInfo);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_TapAPIExchangeStateInfoNotice__SWIG_0() {
+  void * jresult ;
+  TapAPIExchangeStateInfoNotice *result = 0 ;
+  
+  result = (TapAPIExchangeStateInfoNotice *)new TapAPIExchangeStateInfoNotice();
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void * SWIGSTDCALL CSharp_new_TapAPIExchangeStateInfoNotice__SWIG_1(void * jarg1) {
+  void * jresult ;
+  TapAPIExchangeStateInfoNotice *arg1 = 0 ;
+  TapAPIExchangeStateInfoNotice *result = 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfoNotice *)jarg1;
+  if (!arg1) {
+    SWIG_CSharpSetPendingExceptionArgument(SWIG_CSharpArgumentNullException, "TapAPIExchangeStateInfoNotice const & type is null", 0);
+    return 0;
+  } 
+  result = (TapAPIExchangeStateInfoNotice *)new TapAPIExchangeStateInfoNotice((TapAPIExchangeStateInfoNotice const &)*arg1);
+  jresult = (void *)result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_delete_TapAPIExchangeStateInfoNotice(void * jarg1) {
+  TapAPIExchangeStateInfoNotice *arg1 = (TapAPIExchangeStateInfoNotice *) 0 ;
+  
+  arg1 = (TapAPIExchangeStateInfoNotice *)jarg1; 
+  delete arg1;
+}
+
+
 SWIGEXPORT void SWIGSTDCALL CSharp_ITapTradeAPINotify_OnConnect(void * jarg1) {
   ITapTradeAPINotify *arg1 = (ITapTradeAPINotify *) 0 ;
   
@@ -22589,6 +24581,32 @@ SWIGEXPORT void SWIGSTDCALL CSharp_ITapTradeAPINotify_OnRspQryDeepQuote(void * j
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_ITapTradeAPINotify_OnRspQryExchangeStateInfo(void * jarg1, unsigned int jarg2, int jarg3, char jarg4, void * jarg5) {
+  ITapTradeAPINotify *arg1 = (ITapTradeAPINotify *) 0 ;
+  TAPIUINT32 arg2 ;
+  TAPIINT32 arg3 ;
+  TAPIYNFLAG arg4 ;
+  TapAPIExchangeStateInfo *arg5 = (TapAPIExchangeStateInfo *) 0 ;
+  
+  arg1 = (ITapTradeAPINotify *)jarg1; 
+  arg2 = (TAPIUINT32)jarg2; 
+  arg3 = (TAPIINT32)jarg3; 
+  arg4 = (TAPIYNFLAG)jarg4; 
+  arg5 = (TapAPIExchangeStateInfo *)jarg5; 
+  (arg1)->OnRspQryExchangeStateInfo(arg2,arg3,arg4,(TapAPIExchangeStateInfo const *)arg5);
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_ITapTradeAPINotify_OnRtnExchangeStateInfo(void * jarg1, void * jarg2) {
+  ITapTradeAPINotify *arg1 = (ITapTradeAPINotify *) 0 ;
+  TapAPIExchangeStateInfoNotice *arg2 = (TapAPIExchangeStateInfoNotice *) 0 ;
+  
+  arg1 = (ITapTradeAPINotify *)jarg1; 
+  arg2 = (TapAPIExchangeStateInfoNotice *)jarg2; 
+  (arg1)->OnRtnExchangeStateInfo((TapAPIExchangeStateInfoNotice const *)arg2);
+}
+
+
 SWIGEXPORT void * SWIGSTDCALL CSharp_new_ITapTradeAPINotify__SWIG_0() {
   void * jresult ;
   ITapTradeAPINotify *result = 0 ;
@@ -22623,11 +24641,11 @@ SWIGEXPORT void SWIGSTDCALL CSharp_delete_ITapTradeAPINotify(void * jarg1) {
 }
 
 
-SWIGEXPORT void SWIGSTDCALL CSharp_ITapTradeAPINotify_director_connect(void *objarg, SwigDirector_ITapTradeAPINotify::SWIG_Callback0_t callback0, SwigDirector_ITapTradeAPINotify::SWIG_Callback1_t callback1, SwigDirector_ITapTradeAPINotify::SWIG_Callback2_t callback2, SwigDirector_ITapTradeAPINotify::SWIG_Callback3_t callback3, SwigDirector_ITapTradeAPINotify::SWIG_Callback4_t callback4, SwigDirector_ITapTradeAPINotify::SWIG_Callback5_t callback5, SwigDirector_ITapTradeAPINotify::SWIG_Callback6_t callback6, SwigDirector_ITapTradeAPINotify::SWIG_Callback7_t callback7, SwigDirector_ITapTradeAPINotify::SWIG_Callback8_t callback8, SwigDirector_ITapTradeAPINotify::SWIG_Callback9_t callback9, SwigDirector_ITapTradeAPINotify::SWIG_Callback10_t callback10, SwigDirector_ITapTradeAPINotify::SWIG_Callback11_t callback11, SwigDirector_ITapTradeAPINotify::SWIG_Callback12_t callback12, SwigDirector_ITapTradeAPINotify::SWIG_Callback13_t callback13, SwigDirector_ITapTradeAPINotify::SWIG_Callback14_t callback14, SwigDirector_ITapTradeAPINotify::SWIG_Callback15_t callback15, SwigDirector_ITapTradeAPINotify::SWIG_Callback16_t callback16, SwigDirector_ITapTradeAPINotify::SWIG_Callback17_t callback17, SwigDirector_ITapTradeAPINotify::SWIG_Callback18_t callback18, SwigDirector_ITapTradeAPINotify::SWIG_Callback19_t callback19, SwigDirector_ITapTradeAPINotify::SWIG_Callback20_t callback20, SwigDirector_ITapTradeAPINotify::SWIG_Callback21_t callback21, SwigDirector_ITapTradeAPINotify::SWIG_Callback22_t callback22, SwigDirector_ITapTradeAPINotify::SWIG_Callback23_t callback23, SwigDirector_ITapTradeAPINotify::SWIG_Callback24_t callback24) {
+SWIGEXPORT void SWIGSTDCALL CSharp_ITapTradeAPINotify_director_connect(void *objarg, SwigDirector_ITapTradeAPINotify::SWIG_Callback0_t callback0, SwigDirector_ITapTradeAPINotify::SWIG_Callback1_t callback1, SwigDirector_ITapTradeAPINotify::SWIG_Callback2_t callback2, SwigDirector_ITapTradeAPINotify::SWIG_Callback3_t callback3, SwigDirector_ITapTradeAPINotify::SWIG_Callback4_t callback4, SwigDirector_ITapTradeAPINotify::SWIG_Callback5_t callback5, SwigDirector_ITapTradeAPINotify::SWIG_Callback6_t callback6, SwigDirector_ITapTradeAPINotify::SWIG_Callback7_t callback7, SwigDirector_ITapTradeAPINotify::SWIG_Callback8_t callback8, SwigDirector_ITapTradeAPINotify::SWIG_Callback9_t callback9, SwigDirector_ITapTradeAPINotify::SWIG_Callback10_t callback10, SwigDirector_ITapTradeAPINotify::SWIG_Callback11_t callback11, SwigDirector_ITapTradeAPINotify::SWIG_Callback12_t callback12, SwigDirector_ITapTradeAPINotify::SWIG_Callback13_t callback13, SwigDirector_ITapTradeAPINotify::SWIG_Callback14_t callback14, SwigDirector_ITapTradeAPINotify::SWIG_Callback15_t callback15, SwigDirector_ITapTradeAPINotify::SWIG_Callback16_t callback16, SwigDirector_ITapTradeAPINotify::SWIG_Callback17_t callback17, SwigDirector_ITapTradeAPINotify::SWIG_Callback18_t callback18, SwigDirector_ITapTradeAPINotify::SWIG_Callback19_t callback19, SwigDirector_ITapTradeAPINotify::SWIG_Callback20_t callback20, SwigDirector_ITapTradeAPINotify::SWIG_Callback21_t callback21, SwigDirector_ITapTradeAPINotify::SWIG_Callback22_t callback22, SwigDirector_ITapTradeAPINotify::SWIG_Callback23_t callback23, SwigDirector_ITapTradeAPINotify::SWIG_Callback24_t callback24, SwigDirector_ITapTradeAPINotify::SWIG_Callback25_t callback25, SwigDirector_ITapTradeAPINotify::SWIG_Callback26_t callback26) {
   ITapTradeAPINotify *obj = (ITapTradeAPINotify *)objarg;
   SwigDirector_ITapTradeAPINotify *director = dynamic_cast<SwigDirector_ITapTradeAPINotify *>(obj);
   if (director) {
-    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback7, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21, callback22, callback23, callback24);
+    director->swig_connect_director(callback0, callback1, callback2, callback3, callback4, callback5, callback6, callback7, callback8, callback9, callback10, callback11, callback12, callback13, callback14, callback15, callback16, callback17, callback18, callback19, callback20, callback21, callback22, callback23, callback24, callback25, callback26);
   }
 }
 
@@ -22933,6 +24951,22 @@ SWIGEXPORT int SWIGSTDCALL CSharp_ITapTradeAPI_QryDeepQuote(void * jarg1, unsign
   arg2 = (TAPIUINT32 *)jarg2; 
   arg3 = (TapAPIContract *)jarg3; 
   result = (TAPIINT32)(arg1)->QryDeepQuote(arg2,(TapAPIContract const *)arg3);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_ITapTradeAPI_QryExchangeStateInfo(void * jarg1, unsigned int * jarg2, void * jarg3) {
+  int jresult ;
+  ITapTradeAPI *arg1 = (ITapTradeAPI *) 0 ;
+  TAPIUINT32 *arg2 = (TAPIUINT32 *) 0 ;
+  TapAPIExchangeStateInfoQryReq *arg3 = (TapAPIExchangeStateInfoQryReq *) 0 ;
+  TAPIINT32 result;
+  
+  arg1 = (ITapTradeAPI *)jarg1; 
+  arg2 = (TAPIUINT32 *)jarg2; 
+  arg3 = (TapAPIExchangeStateInfoQryReq *)jarg3; 
+  result = (TAPIINT32)(arg1)->QryExchangeStateInfo(arg2,(TapAPIExchangeStateInfoQryReq const *)arg3);
   jresult = result; 
   return jresult;
 }

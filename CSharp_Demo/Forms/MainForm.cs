@@ -147,9 +147,11 @@ namespace TapAPITest_GUI
             newOrder.TriggerPriceType = YNFLAG_NO;
             newOrder.TacticsType = YNFLAG_NO;
             newOrder.PositionEffect2 = YNFLAG_NO;
-            newOrder.OrderSource = TapTrade.TAPI_ORDER_SOURCE_PROGRAM;
+            newOrder.OrderSource = TapTrade.TAPI_ORDER_SOURCE_ESUNNY_API;
             newOrder.TimeInForce = TapTrade.TAPI_ORDER_TIMEINFORCE_GFD;
             newOrder.HedgeFlag = TapTrade.TAPI_HEDGEFLAG_T;
+            newOrder.HedgeFlag2 = TapTrade.TAPI_HEDGEFLAG_NONE;
+
 
             if (!m_TradeCtrl.InsertOrder(newOrder))
             {

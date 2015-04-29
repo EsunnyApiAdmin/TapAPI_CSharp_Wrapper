@@ -486,6 +486,26 @@ public class TapAPIQuoteWhole : IDisposable {
     } 
   }
 
+  public ulong QTotalBidQty {
+    set {
+      TapQuotePINVOKE.TapAPIQuoteWhole_QTotalBidQty_set(swigCPtr, value);
+    } 
+    get {
+      ulong ret = TapQuotePINVOKE.TapAPIQuoteWhole_QTotalBidQty_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public ulong QTotalAskQty {
+    set {
+      TapQuotePINVOKE.TapAPIQuoteWhole_QTotalAskQty_set(swigCPtr, value);
+    } 
+    get {
+      ulong ret = TapQuotePINVOKE.TapAPIQuoteWhole_QTotalAskQty_get(swigCPtr);
+      return ret;
+    } 
+  }
+
   public double GetQBidPrice(int pos) {
     double ret = TapQuotePINVOKE.TapAPIQuoteWhole_GetQBidPrice(swigCPtr, pos);
     return ret;

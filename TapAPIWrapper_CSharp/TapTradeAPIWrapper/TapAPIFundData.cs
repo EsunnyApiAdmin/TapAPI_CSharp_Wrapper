@@ -461,6 +461,176 @@ public class TapAPIFundData : IDisposable {
     } 
   }
 
+  public double FloatingPL {
+    set {
+      TapTradePINVOKE.TapAPIFundData_FloatingPL_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_FloatingPL_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double FrozenRiskFundValue {
+    set {
+      TapTradePINVOKE.TapAPIFundData_FrozenRiskFundValue_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_FrozenRiskFundValue_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double ClosePL {
+    set {
+      TapTradePINVOKE.TapAPIFundData_ClosePL_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_ClosePL_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double NoCurrencyPledgeValue {
+    set {
+      TapTradePINVOKE.TapAPIFundData_NoCurrencyPledgeValue_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_NoCurrencyPledgeValue_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double PrePledgeValue {
+    set {
+      TapTradePINVOKE.TapAPIFundData_PrePledgeValue_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_PrePledgeValue_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double PledgeIn {
+    set {
+      TapTradePINVOKE.TapAPIFundData_PledgeIn_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_PledgeIn_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double PledgeOut {
+    set {
+      TapTradePINVOKE.TapAPIFundData_PledgeOut_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_PledgeOut_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double PledgeValue {
+    set {
+      TapTradePINVOKE.TapAPIFundData_PledgeValue_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_PledgeValue_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double BorrowValue {
+    set {
+      TapTradePINVOKE.TapAPIFundData_BorrowValue_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_BorrowValue_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double SpecialAccountFrozenMargin {
+    set {
+      TapTradePINVOKE.TapAPIFundData_SpecialAccountFrozenMargin_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_SpecialAccountFrozenMargin_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double SpecialAccountMargin {
+    set {
+      TapTradePINVOKE.TapAPIFundData_SpecialAccountMargin_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_SpecialAccountMargin_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double SpecialAccountFrozenFee {
+    set {
+      TapTradePINVOKE.TapAPIFundData_SpecialAccountFrozenFee_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_SpecialAccountFrozenFee_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double SpecialAccountFee {
+    set {
+      TapTradePINVOKE.TapAPIFundData_SpecialAccountFee_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_SpecialAccountFee_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double SpecialFloatProfit {
+    set {
+      TapTradePINVOKE.TapAPIFundData_SpecialFloatProfit_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_SpecialFloatProfit_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double SpecialCloseProfit {
+    set {
+      TapTradePINVOKE.TapAPIFundData_SpecialCloseProfit_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_SpecialCloseProfit_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double SpecialFloatPL {
+    set {
+      TapTradePINVOKE.TapAPIFundData_SpecialFloatPL_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_SpecialFloatPL_get(swigCPtr);
+      return ret;
+    } 
+  }
+
+  public double SpecialClosePL {
+    set {
+      TapTradePINVOKE.TapAPIFundData_SpecialClosePL_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFundData_SpecialClosePL_get(swigCPtr);
+      return ret;
+    } 
+  }
+
   public TapAPIFundData() : this(TapTradePINVOKE.new_TapAPIFundData__SWIG_0(), true) {
   }
 

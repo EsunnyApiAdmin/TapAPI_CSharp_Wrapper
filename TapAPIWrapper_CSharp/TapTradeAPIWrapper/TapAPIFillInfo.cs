@@ -681,6 +681,16 @@ public class TapAPIFillInfo : IDisposable {
     } 
   }
 
+  public double ClosePL {
+    set {
+      TapTradePINVOKE.TapAPIFillInfo_ClosePL_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIFillInfo_ClosePL_get(swigCPtr);
+      return ret;
+    } 
+  }
+
   public TapAPIFillInfo() : this(TapTradePINVOKE.new_TapAPIFillInfo__SWIG_0(), true) {
   }
 

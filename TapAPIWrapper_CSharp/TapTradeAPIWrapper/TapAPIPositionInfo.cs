@@ -651,6 +651,16 @@ public class TapAPIPositionInfo : IDisposable {
     } 
   }
 
+  public double FloatingPL {
+    set {
+      TapTradePINVOKE.TapAPIPositionInfo_FloatingPL_set(swigCPtr, value);
+    } 
+    get {
+      double ret = TapTradePINVOKE.TapAPIPositionInfo_FloatingPL_get(swigCPtr);
+      return ret;
+    } 
+  }
+
   public TapAPIPositionInfo() : this(TapTradePINVOKE.new_TapAPIPositionInfo__SWIG_0(), true) {
   }
 

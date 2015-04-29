@@ -152,6 +152,13 @@ public class TapQuote {
     } 
   }
 
+  public static int TAPIERROR_NotImplemented {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_NotImplemented_get();
+      return ret;
+    } 
+  }
+
   public static int TAPIERROR_INPUTERROR_NULL {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_INPUTERROR_NULL_get();
@@ -495,6 +502,20 @@ public class TapQuote {
     } 
   }
 
+  public static int TAPIERROR_INPUTERROR_TAPITradingStateType {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_INPUTERROR_TAPITradingStateType_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_INPUTERROR_TAPIMarketLevelType {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_INPUTERROR_TAPIMarketLevelType_get();
+      return ret;
+    } 
+  }
+
   public static int TAPIERROR_INPUTERROR_QryHisQuoteParam {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_INPUTERROR_QryHisQuoteParam_get();
@@ -687,6 +708,13 @@ public class TapQuote {
   public static int TAPIERROR_USERINFO_DEL {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_USERINFO_DEL_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNTNO_IN_USERINFO_DEL {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNTNO_IN_USERINFO_DEL_get();
       return ret;
     } 
   }
@@ -946,6 +974,13 @@ public class TapQuote {
   public static int TAPIERROR_GROUPACCOUNT_DEL {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_GROUPACCOUNT_DEL_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_GROUPACCOUNT_ONETOONE {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_GROUPACCOUNT_ONETOONE_get();
       return ret;
     } 
   }
@@ -1265,6 +1300,20 @@ public class TapQuote {
     } 
   }
 
+  public static int TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_SWAP_CONTRACT {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_SWAP_CONTRACT_get();
+      return ret;
+    } 
+  }
+
   public static int TAPIERROR_USERNO_NOTHAS_ACCOUNT {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_USERNO_NOTHAS_ACCOUNT_get();
@@ -1356,6 +1405,41 @@ public class TapQuote {
     } 
   }
 
+  public static int TAPIERROR_RSPQUOTE_NO_PERMIT {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_RSPQUOTE_NO_PERMIT_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_TRADENO_NOT_FIND {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_TRADENO_NOT_FIND_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ORDER_NO_CLOSE {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ORDER_NO_CLOSE_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_QRY_QUOTE_NO_PERMIT {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_QRY_QUOTE_NO_PERMIT_get();
+      return ret;
+    } 
+  }
+
   public static int TAPIERROR_CURRENCYINFO_QRY {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_CURRENCYINFO_QRY_get();
@@ -1436,6 +1520,13 @@ public class TapQuote {
   public static int TAPIERROR_ACCOUNTINFO_MOD {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNTINFO_MOD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ALLACCOUNTINFO_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ALLACCOUNTINFO_QRY_get();
       return ret;
     } 
   }
@@ -3036,6 +3127,13 @@ public class TapQuote {
     } 
   }
 
+  public static int TAPIERROR_ATTRIBUTELEVELINFO_CASCADE_DEL {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ATTRIBUTELEVELINFO_CASCADE_DEL_get();
+      return ret;
+    } 
+  }
+
   public static int TAPIERROR_CALENDARTEMPLATEINFO_QRY {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_CALENDARTEMPLATEINFO_QRY_get();
@@ -3897,6 +3995,230 @@ public class TapQuote {
     } 
   }
 
+  public static int TAPIERROR_ACCOUNT_SEAT_INFO_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNT_SEAT_INFO_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNT_SEAT_INFO_ADD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNT_SEAT_INFO_ADD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNT_SEAT_INFO_DEL {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNT_SEAT_INFO_DEL_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_SEAT_INFO_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_SEAT_INFO_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_SEAT_INFO_ADD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_SEAT_INFO_ADD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_SEAT_INFO_DEL {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_SEAT_INFO_DEL_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_SEAT_INFO_MAIN_EXIT_ADD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_SEAT_INFO_MAIN_EXIT_ADD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNTFEE_PARAMETER_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNTFEE_PARAMETER_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNTMARGIN_PARAMETER_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNTMARGIN_PARAMETER_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_TEMPLATEFEE_BATCH_MOD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_TEMPLATEFEE_BATCH_MOD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_TEMPLATEMARGIN_BATCH_MOD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_TEMPLATEMARGIN_BATCH_MOD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREIGN_EXCHANGE_NEWRATE_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREIGN_EXCHANGE_NEWRATE_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREIGN_EXCHANGE_CURRATE_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREIGN_EXCHANGE_CURRATE_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREIGN_EXCHANGE_RATE_MOD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREIGN_EXCHANGE_RATE_MOD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREIGN_EXCHANGE_RATE_ADD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREIGN_EXCHANGE_RATE_ADD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREIGN_EXCHANGE_RATE_DEL {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREIGN_EXCHANGE_RATE_DEL_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_MAIL_INFO_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_MAIL_INFO_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_MAIL_INFO_ADD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_MAIL_INFO_ADD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_MAIL_INFO_MOD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_MAIL_INFO_MOD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_MAIL_INFO_DEL {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_MAIL_INFO_DEL_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREX_RATE_INFO_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREX_RATE_INFO_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREX_RATE_INFO_ADD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREX_RATE_INFO_ADD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREX_RATE_INFO_MOD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREX_RATE_INFO_MOD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREX_RATE_INFO_DEL {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREX_RATE_INFO_DEL_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREX_HOLIDAY_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREX_HOLIDAY_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREX_HOLIDAY_ADD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREX_HOLIDAY_ADD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREX_HOLIDAY_MOD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREX_HOLIDAY_MOD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_FOREX_HOLIDAY_DEL {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREX_HOLIDAY_DEL_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNT_RELATEINFO_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNT_RELATEINFO_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNT_RELATEINFO_ADD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNT_RELATEINFO_ADD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNT_RELATEINFO_MOD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNT_RELATEINFO_MOD_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNT_RELATEINFO_DEL {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNT_RELATEINFO_DEL_get();
+      return ret;
+    } 
+  }
+
   public static int TAPIERROR_HISORDER_QRY {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_HISORDER_QRY_get();
@@ -3925,6 +4247,13 @@ public class TapQuote {
     } 
   }
 
+  public static int TAPIERROR_ORDERFORTRADE_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ORDERFORTRADE_QRY_get();
+      return ret;
+    } 
+  }
+
   public static int TAPIERROR_HISMATCH_QRY {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_HISMATCH_QRY_get();
@@ -3949,6 +4278,13 @@ public class TapQuote {
   public static int TAPIERROR_HISMATCH_DEL {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_HISMATCH_DEL_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_MATCHFORTRADE_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_MATCHFORTRADE_QRY_get();
       return ret;
     } 
   }
@@ -4688,6 +5024,216 @@ public class TapQuote {
     } 
   }
 
+  public static int TAPIERROR_FOREIGNPOSITION_CHECK_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_FOREIGNPOSITION_CHECK_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNTFUND_CHECK_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNTFUND_CHECK_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_UNEXPCLOSE_CHECK_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_UNEXPCLOSE_CHECK_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_OTHERFUND_QRY_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_OTHERFUND_QRY_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_OTHERFUND_ADD_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_OTHERFUND_ADD_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_OTHERFUND_MOD_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_OTHERFUND_MOD_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_OTHERFUND_DEL_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_OTHERFUND_DEL_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNTFUND_NOTICE_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNTFUND_NOTICE_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_POSITIONMOVEBYACCOUNT_QRY_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_POSITIONMOVEBYACCOUNT_QRY_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_POSITIONMOVEBYACCOUNT_ADD_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_POSITIONMOVEBYACCOUNT_ADD_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_POSITIONMOVEBYACCOUNT_MOD_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_POSITIONMOVEBYACCOUNT_MOD_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_POSITIONMOVEBYACCOUNT_DEL_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_POSITIONMOVEBYACCOUNT_DEL_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ADJUSTMATCH_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ADJUSTMATCH_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_SWAPREPORT_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_SWAPREPORT_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ADDFOURCEREPORT_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ADDFOURCEREPORT_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNTFUNDREPORT_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNTFUNDREPORT_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_DELIVERYALARMREPORT_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_DELIVERYALARMREPORT_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_OHCL_QRY_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_OHCL_QRY_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_OHCL_ADD_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_OHCL_ADD_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_OHCL_MOD_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_OHCL_MOD_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_OHCL_DEL_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_OHCL_DEL_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_TODELIVERY_QRY_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_TODELIVERY_QRY_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_TODELIVERY_ADD_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_TODELIVERY_ADD_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_TODELIVERY_MOD_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_TODELIVERY_MOD_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_TODELIVERY_DEL_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_TODELIVERY_DEL_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNTPLEDGE_QRY_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNTPLEDGE_QRY_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_ACCOUNTPLEDGE_ADD_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_ACCOUNTPLEDGE_ADD_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_SETTLESALE_QRY_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_SETTLESALE_QRY_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_SETTLESALE_ADD_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_SETTLESALE_ADD_REQ_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_SETTLESALE_DEL_REQ {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_SETTLESALE_DEL_REQ_get();
+      return ret;
+    } 
+  }
+
   public static int TAPIERROR_ORDER_FREQUENCY {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_ORDER_FREQUENCY_get();
@@ -5353,6 +5899,20 @@ public class TapQuote {
     } 
   }
 
+  public static int TAPIERROR_TRADEFRONT_DICONNECT_SMTRADE {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_TRADEFRONT_DICONNECT_SMTRADE_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_TRADEFRONT_DICONNECT_TRADE {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_TRADEFRONT_DICONNECT_TRADE_get();
+      return ret;
+    } 
+  }
+
   public static int TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL_get();
@@ -5489,6 +6049,34 @@ public class TapQuote {
   public static int TAPIERROR_CASHIN_NOREVERSE {
     get {
       int ret = TapQuotePINVOKE.TAPIERROR_CASHIN_NOREVERSE_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_RISKCOMMODITY_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_RISKCOMMODITY_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_RISKCONTRACT_FUND {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_RISKCONTRACT_FUND_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_RISKFUND_QRY {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_RISKFUND_QRY_get();
+      return ret;
+    } 
+  }
+
+  public static int TAPIERROR_CONTRACTQUOTE_ADD {
+    get {
+      int ret = TapQuotePINVOKE.TAPIERROR_CONTRACTQUOTE_ADD_get();
       return ret;
     } 
   }

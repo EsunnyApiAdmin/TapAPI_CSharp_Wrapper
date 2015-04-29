@@ -800,6 +800,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_UDP_LISTENING_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_NotImplemented_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_NotImplemented;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_INPUTERROR_NULL_get() {
   int jresult ;
   int result;
@@ -1290,6 +1300,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType_
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_INPUTERROR_TAPITradingStateType_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_INPUTERROR_TAPITradingStateType;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_INPUTERROR_TAPIMarketLevelType_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_INPUTERROR_TAPIMarketLevelType;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_INPUTERROR_QryHisQuoteParam_get() {
   int jresult ;
   int result;
@@ -1565,6 +1595,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_USERINFO_DEL_get() {
   int result;
   
   result = (int)(int)TAPIERROR_USERINFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTNO_IN_USERINFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTNO_IN_USERINFO_DEL;
   jresult = result; 
   return jresult;
 }
@@ -1935,6 +1975,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_GROUPACCOUNT_DEL_get() {
   int result;
   
   result = (int)(int)TAPIERROR_GROUPACCOUNT_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_GROUPACCOUNT_ONETOONE_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_GROUPACCOUNT_ONETOONE;
   jresult = result; 
   return jresult;
 }
@@ -2390,6 +2440,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDERINSERT_CLOSEMODE_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SWAP_CONTRACT_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SWAP_CONTRACT;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_USERNO_NOTHAS_ACCOUNT_get() {
   int jresult ;
   int result;
@@ -2520,6 +2590,56 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDER_NO_PERMIT_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_RSPQUOTE_NO_PERMIT_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_RSPQUOTE_NO_PERMIT;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TRADENO_NOT_FIND_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TRADENO_NOT_FIND;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDER_NO_CLOSE_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ORDER_NO_CLOSE;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_QRY_QUOTE_NO_PERMIT_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_QRY_QUOTE_NO_PERMIT;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_CURRENCYINFO_QRY_get() {
   int jresult ;
   int result;
@@ -2635,6 +2755,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTINFO_MOD_get() {
   int result;
   
   result = (int)(int)TAPIERROR_ACCOUNTINFO_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ALLACCOUNTINFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ALLACCOUNTINFO_QRY;
   jresult = result; 
   return jresult;
 }
@@ -4920,6 +5050,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ATTRIBUTELEVELINFO_MOD_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ATTRIBUTELEVELINFO_CASCADE_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ATTRIBUTELEVELINFO_CASCADE_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_CALENDARTEMPLATEINFO_QRY_get() {
   int jresult ;
   int result;
@@ -6150,6 +6290,326 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_MINMAX_FEETEMPLATE_MOD_get()
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_SEAT_INFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_SEAT_INFO_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_SEAT_INFO_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_SEAT_INFO_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_SEAT_INFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_SEAT_INFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SEAT_INFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SEAT_INFO_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SEAT_INFO_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SEAT_INFO_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SEAT_INFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SEAT_INFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SEAT_INFO_MAIN_EXIT_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SEAT_INFO_MAIN_EXIT_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTFEE_PARAMETER_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTFEE_PARAMETER_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTMARGIN_PARAMETER_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTMARGIN_PARAMETER_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TEMPLATEFEE_BATCH_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TEMPLATEFEE_BATCH_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TEMPLATEMARGIN_BATCH_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TEMPLATEMARGIN_BATCH_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGN_EXCHANGE_NEWRATE_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGN_EXCHANGE_NEWRATE_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGN_EXCHANGE_CURRATE_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGN_EXCHANGE_CURRATE_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGN_EXCHANGE_RATE_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGN_EXCHANGE_RATE_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGN_EXCHANGE_RATE_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGN_EXCHANGE_RATE_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGN_EXCHANGE_RATE_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGN_EXCHANGE_RATE_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_MAIL_INFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_MAIL_INFO_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_MAIL_INFO_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_MAIL_INFO_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_MAIL_INFO_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_MAIL_INFO_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_MAIL_INFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_MAIL_INFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_RATE_INFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_RATE_INFO_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_RATE_INFO_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_RATE_INFO_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_RATE_INFO_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_RATE_INFO_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_RATE_INFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_RATE_INFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_HOLIDAY_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_HOLIDAY_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_HOLIDAY_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_HOLIDAY_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_HOLIDAY_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_HOLIDAY_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREX_HOLIDAY_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREX_HOLIDAY_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_RELATEINFO_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_RELATEINFO_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_RELATEINFO_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_RELATEINFO_ADD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_RELATEINFO_MOD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_RELATEINFO_MOD;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNT_RELATEINFO_DEL_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNT_RELATEINFO_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_HISORDER_QRY_get() {
   int jresult ;
   int result;
@@ -6190,6 +6650,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_HISORDER_DEL_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDERFORTRADE_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ORDERFORTRADE_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_HISMATCH_QRY_get() {
   int jresult ;
   int result;
@@ -6225,6 +6695,16 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_HISMATCH_DEL_get() {
   int result;
   
   result = (int)(int)TAPIERROR_HISMATCH_DEL;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_MATCHFORTRADE_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_MATCHFORTRADE_QRY;
   jresult = result; 
   return jresult;
 }
@@ -7280,6 +7760,306 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTAUTHCASH_DEL_REQ_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_FOREIGNPOSITION_CHECK_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_FOREIGNPOSITION_CHECK_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTFUND_CHECK_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTFUND_CHECK_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_UNEXPCLOSE_CHECK_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_UNEXPCLOSE_CHECK_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OTHERFUND_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OTHERFUND_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OTHERFUND_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OTHERFUND_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OTHERFUND_MOD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OTHERFUND_MOD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OTHERFUND_DEL_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OTHERFUND_DEL_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTFUND_NOTICE_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTFUND_NOTICE_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_POSITIONMOVEBYACCOUNT_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_POSITIONMOVEBYACCOUNT_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_MOD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_POSITIONMOVEBYACCOUNT_MOD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_POSITIONMOVEBYACCOUNT_DEL_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_POSITIONMOVEBYACCOUNT_DEL_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ADJUSTMATCH_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ADJUSTMATCH_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SWAPREPORT_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SWAPREPORT_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ADDFOURCEREPORT_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ADDFOURCEREPORT_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTFUNDREPORT_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTFUNDREPORT_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_DELIVERYALARMREPORT_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_DELIVERYALARMREPORT_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OHCL_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OHCL_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OHCL_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OHCL_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OHCL_MOD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OHCL_MOD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_OHCL_DEL_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_OHCL_DEL_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TODELIVERY_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TODELIVERY_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TODELIVERY_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TODELIVERY_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TODELIVERY_MOD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TODELIVERY_MOD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TODELIVERY_DEL_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TODELIVERY_DEL_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTPLEDGE_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTPLEDGE_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ACCOUNTPLEDGE_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_ACCOUNTPLEDGE_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SETTLESALE_QRY_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SETTLESALE_QRY_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SETTLESALE_ADD_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SETTLESALE_ADD_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_SETTLESALE_DEL_REQ_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_SETTLESALE_DEL_REQ;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_ORDER_FREQUENCY_get() {
   int jresult ;
   int result;
@@ -8230,6 +9010,26 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TRADEFRONT_NODATA_get() {
 }
 
 
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TRADEFRONT_DICONNECT_SMTRADE_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TRADEFRONT_DICONNECT_SMTRADE;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_TRADEFRONT_DICONNECT_TRADE_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_TRADEFRONT_DICONNECT_TRADE;
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL_get() {
   int jresult ;
   int result;
@@ -8425,6 +9225,46 @@ SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_CASHIN_NOREVERSE_get() {
   int result;
   
   result = (int)(int)TAPIERROR_CASHIN_NOREVERSE;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_RISKCOMMODITY_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_RISKCOMMODITY_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_RISKCONTRACT_FUND_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_RISKCONTRACT_FUND;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_RISKFUND_QRY_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_RISKFUND_QRY;
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT int SWIGSTDCALL CSharp_TAPIERROR_CONTRACTQUOTE_ADD_get() {
+  int jresult ;
+  int result;
+  
+  result = (int)(int)TAPIERROR_CONTRACTQUOTE_ADD;
   jresult = result; 
   return jresult;
 }
@@ -11847,6 +12687,50 @@ SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIQuoteWhole_QSwing_get(void * jarg1) {
 }
 
 
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIQuoteWhole_QTotalBidQty_set(void * jarg1, unsigned long long jarg2) {
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  TAPIQVOLUME arg2 ;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  arg2 = (TAPIQVOLUME)jarg2; 
+  if (arg1) (arg1)->QTotalBidQty = arg2;
+}
+
+
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_TapAPIQuoteWhole_QTotalBidQty_get(void * jarg1) {
+  unsigned long long jresult ;
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  TAPIQVOLUME result;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  result = (TAPIQVOLUME) ((arg1)->QTotalBidQty);
+  jresult = result; 
+  return jresult;
+}
+
+
+SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIQuoteWhole_QTotalAskQty_set(void * jarg1, unsigned long long jarg2) {
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  TAPIQVOLUME arg2 ;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  arg2 = (TAPIQVOLUME)jarg2; 
+  if (arg1) (arg1)->QTotalAskQty = arg2;
+}
+
+
+SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_TapAPIQuoteWhole_QTotalAskQty_get(void * jarg1) {
+  unsigned long long jresult ;
+  TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
+  TAPIQVOLUME result;
+  
+  arg1 = (TapAPIQuoteWhole *)jarg1; 
+  result = (TAPIQVOLUME) ((arg1)->QTotalAskQty);
+  jresult = result; 
+  return jresult;
+}
+
+
 SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIQuoteWhole_GetQBidPrice(void * jarg1, int jarg2) {
   double jresult ;
   TapAPIQuoteWhole *arg1 = (TapAPIQuoteWhole *) 0 ;
@@ -12166,28 +13050,6 @@ SWIGEXPORT unsigned long long SWIGSTDCALL CSharp_TapAPIHisQuote_QTotalQty_get(vo
   
   arg1 = (TapAPIHisQuote *)jarg1; 
   result = (TAPIQVOLUME) ((arg1)->QTotalQty);
-  jresult = result; 
-  return jresult;
-}
-
-
-SWIGEXPORT void SWIGSTDCALL CSharp_TapAPIHisQuote_QTotalTurnover_set(void * jarg1, double jarg2) {
-  TapAPIHisQuote *arg1 = (TapAPIHisQuote *) 0 ;
-  TAPIQPRICE arg2 ;
-  
-  arg1 = (TapAPIHisQuote *)jarg1; 
-  arg2 = (TAPIQPRICE)jarg2; 
-  if (arg1) (arg1)->QTotalTurnover = arg2;
-}
-
-
-SWIGEXPORT double SWIGSTDCALL CSharp_TapAPIHisQuote_QTotalTurnover_get(void * jarg1) {
-  double jresult ;
-  TapAPIHisQuote *arg1 = (TapAPIHisQuote *) 0 ;
-  TAPIQPRICE result;
-  
-  arg1 = (TapAPIHisQuote *)jarg1; 
-  result = (TAPIQPRICE) ((arg1)->QTotalTurnover);
   jresult = result; 
   return jresult;
 }

@@ -47,6 +47,8 @@ const int TAPIERROR_API_NotReady                                       = -17;
 const int TAPIERROR_UDP_LISTEN_FAILED                                  = -18;
 //! UDP正在监听
 const int TAPIERROR_UDP_LISTENING                                      = -19;
+//! 接口未实现
+const int TAPIERROR_NotImplemented                                     = -20;
 /** @}*/
 
 
@@ -154,6 +156,11 @@ const int TAPIERROR_INPUTERROR_TAPICashAdjustTypeType                  = -12040;
 const int TAPIERROR_INPUTERROR_TAPITriggerConditionType                = -12041;
 //! 输入错误的:TAPITriggerPriceTypeType
 const int TAPIERROR_INPUTERROR_TAPITriggerPriceTypeType                = -12042;
+//! 输入错误的:TAPITradingStateType 
+const int TAPIERROR_INPUTERROR_TAPITradingStateType                    = -12043;
+//! 输入错误的:TAPIMarketLevelType 
+const int TAPIERROR_INPUTERROR_TAPIMarketLevelType                     = -12044;
+
 
 //! 历史行情查询参数不合法
 const int TAPIERROR_INPUTERROR_QryHisQuoteParam                        = -13001;
@@ -232,6 +239,8 @@ const int TAPIERROR_USERINFO_ADD                                       = 10102;
 const int TAPIERROR_USERINFO_MOD                                       = 10103;
 //! 登录用户信息删除失败
 const int TAPIERROR_USERINFO_DEL                                       = 10104;
+//! 存在关联信息，删除失败
+const int TAPIERROR_ACCOUNTNO_IN_USERINFO_DEL                          = 10105;
 
 //=============================================================================
 //! 登录用户状态查询失败
@@ -328,6 +337,8 @@ const int TAPIERROR_GROUPACCOUNT_QRY                                   = 11201;
 const int TAPIERROR_GROUPACCOUNT_ADD                                   = 11202;
 //! 账号分组下属资金账号删除失败
 const int TAPIERROR_GROUPACCOUNT_DEL                                   = 11203;
+//! 账号分组下属资金账号增加失败，该分组属性一个客户只能对应一个分组
+const int TAPIERROR_GROUPACCOUNT_ONETOONE                              = 11204;
 
 //=============================================================================
 //! 登录用户下属账号分组查询失败
@@ -443,6 +454,10 @@ const int TAPIERROR_ORDERINSERT_AUTOCHECK_FAIL                         = 60036;
 const int TAPIERROR_ORDERINSERT_LME_NOTREADY                           = 60037;
 //! 平仓方式错误
 const int TAPIERROR_ORDERINSERT_CLOSEMODE                              = 60038;
+//! 下单对应的父账号资金不足
+const int TAPIERROR_ORDERINSERT_PARENTNOTENOUGHFUND                    = 60039;
+//! 互换单的合约格式错误
+const int TAPIERROR_SWAP_CONTRACT                                      = 60040;
 
 //! 当前客户不能使用此账号交易
 const int TAPIERROR_USERNO_NOTHAS_ACCOUNT                              = 60051;
@@ -476,6 +491,16 @@ const int TAPIERROR_ORDERINSERT_MARGIN                                 = 60092;
 //! 操作账号只可查询
 const int TAPIERROR_ORDER_NO_PERMIT                                    = 60100;
 
+//! 非做市商不能应价
+const int TAPIERROR_RSPQUOTE_NO_PERMIT                                 = 60101;
+//! 即使子帐号又是做市商不能应价
+const int TAPIERROR_RSPQUOTE_CHILD_NO_PERMIT                           = 60102;
+//! 下单找不到交易编码
+const int TAPIERROR_TRADENO_NOT_FIND                                   = 60103;
+//! 操作账号只可开仓
+const int TAPIERROR_ORDER_NO_CLOSE                                     = 60104;
+//! 操作账号没有上期挂单查询权限
+const int TAPIERROR_QRY_QUOTE_NO_PERMIT                                = 60105;
 //=============================================================================
 //! 币种查询失败
 const int TAPIERROR_CURRENCYINFO_QRY                                   = 20101;
@@ -502,7 +527,8 @@ const int TAPIERROR_ACCOUNTINFO_ADD                                    = 20203;
 const int TAPIERROR_ACCOUNTINFO_DEL                                    = 20204;
 //! 资金账号信息修改失败
 const int TAPIERROR_ACCOUNTINFO_MOD                                    = 20205;
-
+//! 全部资金账号信息查询失败
+const int TAPIERROR_ALLACCOUNTINFO_QRY                                 = 20206;
 //=============================================================================
 //! 机构客户信息查询失败
 const int TAPIERROR_ORGINFO_QRY                                        = 20301;
@@ -1066,6 +1092,8 @@ const int TAPIERROR_ATTRIBUTELEVELINFO_ADD                             = 25702;
 const int TAPIERROR_ATTRIBUTELEVELINFO_DEL                             = 25703;
 //! 属性级别信息修改失败
 const int TAPIERROR_ATTRIBUTELEVELINFO_MOD                             = 25704;
+//! 属性级别信息级联删除失败
+const int TAPIERROR_ATTRIBUTELEVELINFO_CASCADE_DEL                     = 25705;
 
 //=============================================================================
 //! 交易日历模板信息查询失败
@@ -1381,8 +1409,79 @@ const int TAPIERROR_ACCOUNT_MINMAX_FEETEMPLATE_ADD                     = 29402;
 const int TAPIERROR_ACCOUNT_MINMAX_FEETEMPLATE_DEL                     = 29403;
 //! 客户对应手续费区间模板修改失败
 const int TAPIERROR_ACCOUNT_MINMAX_FEETEMPLATE_MOD                     = 29404;
-
-//! =============================================================================
+//=============================================================================
+//! 资金账户所属一线通编号系统查询失败
+const int TAPIERROR_ACCOUNT_SEAT_INFO_QRY                              = 29411;
+//! 资金账户所属一线通编号系统增加失败
+const int TAPIERROR_ACCOUNT_SEAT_INFO_ADD                              = 29412;
+//! 资金账户所属一线通编号系统删除失败
+const int TAPIERROR_ACCOUNT_SEAT_INFO_DEL                              = 29413;
+//=============================================================================
+//! 一线通账号信息查询失败
+const int TAPIERROR_SEAT_INFO_QRY                                      = 29421;
+//! 一线通账号信息增加失败
+const int TAPIERROR_SEAT_INFO_ADD                                      = 29422;
+//! 一线通账号信息删除失败
+const int TAPIERROR_SEAT_INFO_DEL                                      = 29423;
+//! 一线通账号信息主席已存在增加失败
+const int TAPIERROR_SEAT_INFO_MAIN_EXIT_ADD                            = 29422;
+//=============================================================================
+//! 客户最终手续费查询失败
+const int TAPIERROR_ACCOUNTFEE_PARAMETER_QRY                           = 29431;
+//! 客户最终保证金查询失败
+const int TAPIERROR_ACCOUNTMARGIN_PARAMETER_QRY                        = 29432;
+//! 手续费模板批量修改失败
+const int TAPIERROR_TEMPLATEFEE_BATCH_MOD                              = 29433;
+//! 保证金模板批量修改失败
+const int TAPIERROR_TEMPLATEMARGIN_BATCH_MOD                           = 29434;
+//=============================================================================
+//! 外汇期货最新费率查询失败
+const int TAPIERROR_FOREIGN_EXCHANGE_NEWRATE_QRY                       = 29441;
+//! 外汇期货当前费率查询失败
+const int TAPIERROR_FOREIGN_EXCHANGE_CURRATE_QRY                       = 29442;
+//! 外汇期货费率修改失败
+const int TAPIERROR_FOREIGN_EXCHANGE_RATE_MOD                          = 29443;
+//! 外汇期货费率增加失败
+const int TAPIERROR_FOREIGN_EXCHANGE_RATE_ADD                          = 29444;
+//! 外汇期货费率删除失败
+const int TAPIERROR_FOREIGN_EXCHANGE_RATE_DEL                          = 29445;
+//=============================================================================
+//! 邮件信息查询失败
+const int TAPIERROR_MAIL_INFO_QRY                                      = 29451;
+//! 邮件信息增加失败
+const int TAPIERROR_MAIL_INFO_ADD                                      = 29452;
+//! 邮件信息修改失败
+const int TAPIERROR_MAIL_INFO_MOD                                      = 29453;
+//! 邮件信息删除失败
+const int TAPIERROR_MAIL_INFO_DEL                                      = 29454;
+//=============================================================================
+//! 外汇利率查询失败
+const int TAPIERROR_FOREX_RATE_INFO_QRY                                = 29461;
+//! 外汇利率增加失败
+const int TAPIERROR_FOREX_RATE_INFO_ADD                                = 29462;
+//! 外汇利率修改失败
+const int TAPIERROR_FOREX_RATE_INFO_MOD                                = 29463;
+//! 外汇利率删除失败
+const int TAPIERROR_FOREX_RATE_INFO_DEL                                = 29464;
+//=============================================================================
+//! 外汇假期查询失败
+const int TAPIERROR_FOREX_HOLIDAY_QRY                                  = 29471;
+//! 外汇假期增加失败
+const int TAPIERROR_FOREX_HOLIDAY_ADD                                  = 29472;
+//! 外汇假期修改失败
+const int TAPIERROR_FOREX_HOLIDAY_MOD                                  = 29473;
+//! 外汇假期删除失败
+const int TAPIERROR_FOREX_HOLIDAY_DEL                                  = 29474;
+//=============================================================================
+//! 客户关联查询失败
+const int TAPIERROR_ACCOUNT_RELATEINFO_QRY                             = 29481;
+//! 客户关联增加失败
+const int TAPIERROR_ACCOUNT_RELATEINFO_ADD                             = 29482;
+//! 客户关联修改失败
+const int TAPIERROR_ACCOUNT_RELATEINFO_MOD                             = 29483;
+//! 客户关联删除失败
+const int TAPIERROR_ACCOUNT_RELATEINFO_DEL                             = 29484;
+//=============================================================================
 //! 结算服务错误号
 //=============================================================================
 //! 历史委托查询错误
@@ -1393,6 +1492,8 @@ const int TAPIERROR_HISORDER_ADD                                       = 40002;
 const int TAPIERROR_HISORDER_MOD                                       = 40003;
 //! 历史委托删除
 const int TAPIERROR_HISORDER_DEL                                       = 40004;
+//! 交易服务器委托查询错误
+const int TAPIERROR_ORDERFORTRADE_QRY                                  = 40005;
 
 //=============================================================================
 //! 历史成交查询错误
@@ -1403,6 +1504,8 @@ const int TAPIERROR_HISMATCH_ADD                                       = 40102;
 const int TAPIERROR_HISMATCH_MOD                                       = 40103;
 //! 历史成交删除错误
 const int TAPIERROR_HISMATCH_DEL                                       = 40104;
+//! 交易服务器成交查询错误
+const int TAPIERROR_MATCHFORTRADE_QRY                                  = 40105;
 
 //=============================================================================
 //! 历史持仓查询错误
@@ -1682,6 +1785,94 @@ const int TAPIERROR_ACCOUNTAUTHCASH_ADD_REQ                            = 43601;
 //! 客户授信资金查询请求失败
 const int TAPIERROR_ACCOUNTAUTHCASH_DEL_REQ                            = 43602;
 
+
+//=============================================================================
+//! 外盘持仓核对请求错误
+const int TAPIERROR_FOREIGNPOSITION_CHECK_REQ                          = 43701;
+//! 外盘客户资金核对请求错误		
+const int TAPIERROR_ACCOUNTFUND_CHECK_REQ                              = 43702;
+//! 外盘未到期平仓核对请求错误
+const int TAPIERROR_UNEXPCLOSE_CHECK_REQ                               = 43703;
+
+//=============================================================================
+//! 其他资金查询请求错误
+const int TAPIERROR_OTHERFUND_QRY_REQ                                  = 43801;
+//! 其他资金增加请求错误		
+const int TAPIERROR_OTHERFUND_ADD_REQ                                  = 43802;
+//! 其他资金修改请求错误
+const int TAPIERROR_OTHERFUND_MOD_REQ                                  = 43803;
+//! 其他资金删除请求错误
+const int TAPIERROR_OTHERFUND_DEL_REQ                                  = 43804;
+
+//=============================================================================
+//! 客户资金刷新通知请求错误
+const int TAPIERROR_ACCOUNTFUND_NOTICE_REQ                             = 43901;
+
+//=============================================================================
+//! 根据客户移仓信息查询请求错误
+const int TAPIERROR_POSITIONMOVEBYACCOUNT_QRY_REQ                      = 44001;
+//! 根据客户移仓信息增加请求错误		
+const int TAPIERROR_POSITIONMOVEBYACCOUNT_ADD_REQ                      = 44002;
+//! 根据客户移仓信息修改请求错误
+const int TAPIERROR_POSITIONMOVEBYACCOUNT_MOD_REQ                      = 44003;
+//! 根据客户移仓信息删除请求错误
+const int TAPIERROR_POSITIONMOVEBYACCOUNT_DEL_REQ                      = 44004;
+
+//=============================================================================
+//! 调单请求错误
+const int TAPIERROR_ADJUSTMATCH_REQ                                    = 44101;
+
+//=============================================================================
+//! 换汇通知表错误
+const int TAPIERROR_SWAPREPORT_REQ                                     = 44201;
+
+//=============================================================================
+//! 追保强平报表错误
+const int TAPIERROR_ADDFOURCEREPORT_REQ                                = 44301;
+
+//=============================================================================
+//! 资金对账表错误
+const int TAPIERROR_ACCOUNTFUNDREPORT_REQ                              = 44401;
+
+//=============================================================================
+//! 交割警示表错误
+const int TAPIERROR_DELIVERYALARMREPORT_REQ                            = 44501;
+
+//=============================================================================
+//! 外汇高开低收价格查询请求错误
+const int TAPIERROR_OHCL_QRY_REQ                                       = 446001;
+//! 外汇高开低收价格增加请求错误		
+const int TAPIERROR_OHCL_ADD_REQ                                       = 44602;
+//! 外汇高开低收价格修改请求错误
+const int TAPIERROR_OHCL_MOD_REQ                                       = 44603;
+//! 外汇高开低收价格删除请求错误
+const int TAPIERROR_OHCL_DEL_REQ                                       = 44604;
+
+//=============================================================================
+//! 待交割信息查询请求错误
+const int TAPIERROR_TODELIVERY_QRY_REQ                                 = 44701;
+//! 待交割信息增加请求错误		
+const int TAPIERROR_TODELIVERY_ADD_REQ                                 = 44702;
+//! 待交割信息修改请求错误
+const int TAPIERROR_TODELIVERY_MOD_REQ                                 = 44703;
+//! 待交割信息删除请求错误
+const int TAPIERROR_TODELIVERY_DEL_REQ                                 = 44704;
+
+//=============================================================================
+//! 客户质押资金查询请求错误
+const int TAPIERROR_ACCOUNTPLEDGE_QRY_REQ                              = 44801;
+//! 客户质押资金增加请求错误		
+const int TAPIERROR_ACCOUNTPLEDGE_ADD_REQ                              = 44802;
+
+//=============================================================================
+//! 客户结售汇查询请求错误
+const int TAPIERROR_SETTLESALE_QRY_REQ                                 = 44901;
+//! 客户结售汇增加请求错误		
+const int TAPIERROR_SETTLESALE_ADD_REQ                                 = 44902;
+//! 客户结售汇删除请求错误		
+const int TAPIERROR_SETTLESALE_DEL_REQ                                 = 44903;
+
+
 //=============================================================================
 //! 订单操作频率过高
 const int TAPIERROR_ORDER_FREQUENCY                                    = 61001;
@@ -1927,6 +2118,10 @@ const int TAPIERROR_TRADEFRONT_NOTALLOWLOGIN                           = 82018;
 const int TAPIERROR_TRADEFRONT_TOOMANYDATA                             = 82019;
 //! 前置没有所要数据
 const int TAPIERROR_TRADEFRONT_NODATA                                  = 82020;
+//! 下单失败，小前置与服务器断开
+const int TAPIERROR_TRADEFRONT_DICONNECT_SMTRADE                       = 82021;
+//! 下单失败，前置与交易服务器断开
+const int TAPIERROR_TRADEFRONT_DICONNECT_TRADE                         = 82022;
 // ----------------行情前置错误代码定义-----------------------------------------------
 //! 不支持的行情协议
 const int TAPIERROR_QUOTEFRONT_UNKNOWN_PROTOCOL                        = 83001;
@@ -1977,6 +2172,16 @@ const int TAPIERROR_TRANSFERINFO_LOST                                  = 90017;
 const int TAPIERROR_BANK_NOTALLOWTRANSFER                              = 90018;
 //! 银行转期货操作已完成,无法冲正
 const int TAPIERROR_CASHIN_NOREVERSE                                   = 90019;
+
+// ----------------风险监控服务错误代码定义-----------------------------------------------
+//! 风控品种信息查询失败
+const int TAPIERROR_RISKCOMMODITY_QRY                                  = 91001;
+//! 预算查询不到合约信息
+const int TAPIERROR_RISKCONTRACT_FUND                                  = 91002;
+//! 风险资金查询不到风险参数
+const int TAPIERROR_RISKFUND_QRY                                       = 91003;
+//! 合约行情价格增加失败
+const int TAPIERROR_CONTRACTQUOTE_ADD                                  = 91004;
 
 /** @}*/
 
