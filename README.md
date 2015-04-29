@@ -36,3 +36,5 @@ TapAPI_CSharp_Wrapper
     └─TapTradeAPIWrapper
 </pre>
 
+### 联系方式
+QQ群：253509842
